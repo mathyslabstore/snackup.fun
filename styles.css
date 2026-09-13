@@ -182,9 +182,10 @@ main {
 
 .cta:hover { transform: translateY(-2px); opacity: 0.92; }
 
-.cta .play-icon {
+.cta .store-icon {
   width: 18px;
   height: 18px;
+  flex: none;
 }
 
 .cta-note {
@@ -388,6 +389,8 @@ footer .legal-links a:hover {
     --peach-bg:#3A2A1D;  --peach-fg:#FFCBA0;
   }
   :root:not([data-theme="light"]) .cta { background: var(--seed); color: #0F1613; }
+  :root:not([data-theme="light"]) .cta-ghost { background: transparent; color: var(--text); }
+  :root:not([data-theme="light"]) .steps li { border-color: rgba(242, 251, 248, 0.10); }
 }
 
 :root[data-theme="dark"] {
@@ -401,3 +404,210 @@ footer .legal-links a:hover {
 }
 
 :root[data-theme="dark"] .cta { background: var(--seed); color: #0F1613; }
+:root[data-theme="dark"] .cta-ghost { background: transparent; color: var(--text); }
+:root[data-theme="dark"] .steps li { border-color: rgba(242, 251, 248, 0.10); }
+
+/* ---- CTA row: one button per store, the second one outlined ---- */
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.cta-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid currentColor;
+  padding: 14px 26px;
+}
+
+/* Pending listings are not links: nothing to click yet, so no pointer, no lift. */
+.cta-pending {
+  cursor: default;
+}
+
+.cta-pending:hover {
+  transform: none;
+  opacity: 1;
+}
+
+/* ---- How it works ---- */
+
+.steps {
+  padding: 72px 0 0;
+}
+
+.steps h2,
+.privacy-strip h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 24px;
+}
+
+.steps ol {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.steps li {
+  background: var(--surface);
+  border: 1px solid rgba(20, 33, 29, 0.08);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+
+.steps .step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--seed), var(--seed-dark));
+  color: #0F1613;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.steps h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.steps p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* ---- What stays with you ---- */
+
+.privacy-strip {
+  margin-top: 72px;
+  background: var(--mint-bg);
+  color: var(--mint-fg);
+  border-radius: var(--radius);
+  padding: 36px 32px;
+}
+
+.privacy-lead {
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0 0 22px;
+  max-width: 620px;
+  opacity: 0.95;
+}
+
+.privacy-strip ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.privacy-strip li {
+  font-size: 14px;
+  line-height: 1.5;
+  padding-left: 22px;
+  position: relative;
+  opacity: 0.95;
+}
+
+.privacy-strip li::before {
+  content: "¹3";
+  position: absolute;
+  left: 0;
+  font-weight: 800;
+}
+
+.privacy-note {
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid currentColor;
+  opacity: 0.8;
+}
+
+.privacy-note a {
+  color: inherit;
+}
+
+/* ---- Support page ---- */
+
+.contact-card {
+  background: var(--mint-bg);
+  color: var(--mint-fg);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  margin-bottom: 36px;
+}
+
+.contact-card p {
+  color: inherit;
+  margin: 0;
+}
+
+.contact-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 6px !important;
+}
+
+.contact-mail {
+  font-size: 26px !important;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px !important;
+  word-break: break-word;
+}
+
+.contact-mail a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+}
+
+.legal h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 24px 0 6px;
+}
+
+.support .legal-lead {
+  max-width: 620px;
+}
+
+/* ---- Focus visibility (keyboard navigation) ---- */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--seed-dark);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (max-width: 760px) {
+  .steps ol { grid-template-columns: 1fr; }
+  .steps { padding-top: 56px; }
+  .privacy-strip { margin-top: 56px; padding: 30px 22px; }
+  .privacy-strip ul { grid-template-columns: 1fr; }
+  .hero .cta-row { justify-content: center; }
+  .steps h2, .privacy-strip h2 { font-size: 24px; }
+}

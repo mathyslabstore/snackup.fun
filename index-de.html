@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SnackUp — Sport in Snacks &amp; Level up</title>
 <meta name="description" content="SnackUp verwandelt Sport in kurze Mikro-Einheiten, verteilt über deinen Tag. Ohne Schuldgefühl, einfach Snacks, die sich summieren.">
+<link rel="canonical" href="https://snackup.fun/index-de.html">
+<link rel="alternate" hreflang="fr" href="https://snackup.fun/index.html">
+<link rel="alternate" hreflang="en" href="https://snackup.fun/index-en.html">
+<link rel="alternate" hreflang="de" href="https://snackup.fun/index-de.html">
+<link rel="alternate" hreflang="x-default" href="https://snackup.fun/index.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#1FE0C2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1613" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SnackUp">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://snackup.fun/index-de.html">
+<meta property="og:title" content="SnackUp — Sport, in Snacks.">
+<meta property="og:description" content="Mikro-Einheiten von wenigen Minuten über den Tag verteilt, die sich zu einer ausgewogenen Woche summieren. Ohne Schuldgefühl, und komplett auf deinem Telefon.">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="styles.css">
 <script>try{var t=localStorage.getItem('snackup-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
@@ -39,16 +55,26 @@
             deiner Zeit und deinem Kontext — die sich ohne Schuldgefühl summieren,
             für einen Körper, der sich weiterentwickelt.
           </p>
-          <!-- TODO: replace href="#" with the real Google Play Store listing URL once published -->
-          <a class="cta" href="#" aria-label="Bald bei Google Play verfügbar">
-            <svg class="play-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3.6 2.4 14.4 12 3.6 21.6a1.6 1.6 0 0 1-.6-1.25V3.65c0-.5.24-.96.6-1.25Z" fill="#fff"/>
-              <path d="M14.4 12 3.6 2.4c.2-.16.44-.27.7-.32a1.6 1.6 0 0 1 1.36.28l10.3 6-1.56 3.64Z" fill="#fff" opacity="0.7"/>
-              <path d="M14.4 12l1.56 3.64-10.3 6a1.6 1.6 0 0 1-1.36.28c-.26-.05-.5-.16-.7-.32L14.4 12Z" fill="#fff" opacity="0.7"/>
-              <path d="m16 10.36 3.4 1.98a1.6 1.6 0 0 1 0 2.72L16 17.04 14.4 12l1.6-1.64Z" fill="#fff" opacity="0.85"/>
-            </svg>
-            Bald bei Google Play
-          </a>
+          <div class="cta-row">
+            <!-- TODO: once the Play listing is live, turn this span into a link: same classes, add an href to the store URL. -->
+            <span class="cta cta-pending">
+              <svg class="store-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M3.6 2.4 14.4 12 3.6 21.6a1.6 1.6 0 0 1-.6-1.25V3.65c0-.5.24-.96.6-1.25Z" fill="currentColor"/>
+                <path d="M14.4 12 3.6 2.4c.2-.16.44-.27.7-.32a1.6 1.6 0 0 1 1.36.28l10.3 6-1.56 3.64Z" fill="currentColor" opacity="0.7"/>
+                <path d="M14.4 12l1.56 3.64-10.3 6a1.6 1.6 0 0 1-1.36.28c-.26-.05-.5-.16-.7-.32L14.4 12Z" fill="currentColor" opacity="0.7"/>
+                <path d="m16 10.36 3.4 1.98a1.6 1.6 0 0 1 0 2.72L16 17.04 14.4 12l1.6-1.64Z" fill="currentColor" opacity="0.85"/>
+              </svg>
+              Bald bei Google Play
+            </span>
+            <!-- TODO: once the App Store listing is live, turn this span into a link: same classes, add an href to the store URL. -->
+            <span class="cta cta-ghost cta-pending">
+              <svg class="store-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M16.31 12.72c.02-1.7.92-3.22 2.34-4.08a5.3 5.3 0 0 0-4.18-2.26c-1.76-.18-3.44 1.04-4.33 1.04-.9 0-2.27-1.01-3.73-.99a5.56 5.56 0 0 0-4.68 2.85c-2 3.47-.51 8.6 1.43 11.42.95 1.38 2.08 2.92 3.56 2.87 1.43-.06 1.97-.93 3.7-.93 1.72 0 2.22.93 3.73.9 1.54-.03 2.51-1.4 3.45-2.79a12.3 12.3 0 0 0 1.56-3.2 5.01 5.01 0 0 1-2.85-4.83Z" fill="currentColor"/>
+                <path d="M13.87 4.6A5 5 0 0 0 15.05 1a5.13 5.13 0 0 0-3.34 1.73 4.75 4.75 0 0 0-1.21 3.46 4.24 4.24 0 0 0 3.37-1.59Z" fill="currentColor"/>
+              </svg>
+              Bald für iOS
+            </span>
+          </div>
           <span class="cta-note">Baldiger Start — schau bald wieder vorbei!</span>
         </div>
 
@@ -77,17 +103,64 @@
           <p>Nie eine „verpasste Einheit". SnackUp verfolgt deinen Fortschritt zum Wochenziel, nicht einzelne Einheiten, die um jeden Preis gelingen müssen.</p>
         </div>
       </section>
+
+      <section class="steps">
+        <h2>So funktioniert es</h2>
+        <ol>
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Ein Vorschlag kommt</h3>
+            <p>Über den Tag verteilt, in den Momenten, in denen du wirklich Zeit hast. Die App lernt daraus, was du annimmst und was du auslässt — es gibt keine Einheit zu planen.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Du wählst und machst</h3>
+            <p>Ein paar Übungen, passend zu deiner Zeit, deinem Ort und dem, was du diese Woche schon gemacht hast. Gerade ungünstig? Der nächste Vorschlag kommt.</p>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Die Woche füllt sich</h3>
+            <p>Jeder Snack zahlt auf die Balance deiner Woche und deinen Fortschritt im Übungsbaum ein. Was liegen bleibt, verfolgt dich nicht: Die Woche fängt neu an.</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="privacy-strip">
+        <h2>Was bei dir bleibt</h2>
+        <p class="privacy-lead">SnackUp ist eine lokale App. Es gibt keinen Server auf der Gegenseite: kein Konto, kein Profil im Internet, nichts, das anderswo als auf deinem Telefon zu löschen wäre.</p>
+        <ul>
+          <li><strong>Kein Konto</strong> — keine Registrierung, keine E-Mail-Adresse nötig.</li>
+          <li><strong>Alles bleibt auf dem Gerät</strong> — und lässt sich verschlüsselt exportieren, wenn du das Telefon wechselst.</li>
+          <li><strong>Offline</strong> — die App funktioniert vollständig ohne Verbindung.</li>
+          <li><strong>Keine Werbung, kein Tracking</strong> — keine Reichweitenmessung, keine weitergegebenen Daten.</li>
+        </ul>
+        <p class="privacy-note">Kostenlos, ohne Mauer: Der Motor, die komplette Woche, die Erinnerungen, der Verlauf und die verschlüsselten Sicherungen bleiben es. Ein optionales Premium-Abo bringt Komfort und finanziert das Weitere. Die Einzelheiten stehen in den <a href="nutzungsbedingungen-de.html">Nutzungsbedingungen</a> und der <a href="datenschutz-de.html">Datenschutzerklärung</a>.</p>
+      </section>
     </main>
 
     <footer>
       © 2026 Mathys Lab — SnackUp
       <div class="legal-links">
+        <a href="support-de.html">Hilfe &amp; Kontakt</a>
         <a href="impressum-de.html">Impressum</a>
         <a href="datenschutz-de.html">Datenschutz</a>
         <a href="nutzungsbedingungen-de.html">Nutzungsbedingungen</a>
       </div>
     </footer>
   </div>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SnackUp",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "Android, iOS",
+    "url": "https://snackup.fun/",
+    "description": "Mikro-Einheiten von 30 Sekunden bis wenigen Minuten, über den Tag vorgeschlagen, die sich zu einem ausgewogenen Wochenvolumen summieren.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "author": { "@type": "Organization", "name": "Mathys Lab", "email": "contact@snackup.fun" }
+  }
+  </script>
   <script src="theme.js" defer></script>
 </body>
 </html>

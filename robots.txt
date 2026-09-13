@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Legal pages carry <meta name="robots" content="noindex"> on purpose; they are
+# reachable from the app and the stores, not meant to rank.
+
+Sitemap: https://snackup.fun/sitemap.xml

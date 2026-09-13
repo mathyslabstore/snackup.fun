@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<!-- Variant "G2" (2026-08-30): deep-teal #0B3B36 ground, mark filled with the
+     five pastel card tints as a gradient. Keep logo-mark.svg (shape-only, for
+     runtime tinting / the animated BrandCycle mark) in sync with the two
+     <path> below. To nudge the mark, edit the transform on <g id="mark">. -->
+<svg
+   width="377.95276"
+   height="377.95276"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <linearGradient
+       id="markGrad"
+       gradientUnits="userSpaceOnUse"
+       x1="20" y1="14" x2="82" y2="88">
+      <stop offset="0" stop-color="#DFF5E8" />
+      <stop offset="0.25" stop-color="#EAE4FB" />
+      <stop offset="0.5" stop-color="#FDEAD9" />
+      <stop offset="0.75" stop-color="#DFF0FB" />
+      <stop offset="1" stop-color="#FBE3EC" />
+    </linearGradient>
+  </defs>
+  <g
+     id="layer1">
+    <rect
+       style="fill:#0b3b36;fill-opacity:1;stroke-width:0.0474859"
+       id="rect2"
+       width="100"
+       height="100"
+       x="0"
+       y="-5.5511151e-17" />
+    <g
+       id="mark"
+       transform="translate(0,0)">
+      <path
+         id="rect4-2-5-2"
+         style="fill:url(#markGrad);fill-opacity:1;stroke:none;stroke-width:0.127162;stroke-dasharray:none"
+         d="m 37.068667,-5.7643042 h 5.096838 a 3.5340331,3.5340331 44.846845 0 1 3.533983,3.5151399 l 0.04705,8.8002448 a 4.9213767,4.9213767 44.846845 0 0 4.921306,4.8950665 H 87.260464 A 4.1679457,4.1679457 134.84625 0 0 91.42835,7.2558323 l -0.04897,-9.1247124 a 3.8749928,3.8749928 134.84625 0 1 3.874937,-3.8957895 h 4.594061 a 2.7116961,2.7116961 112.5 0 0 1.917454,-4.6291554 L 71.727675,-40.431982 a 4.4240182,4.4240182 180 0 0 -6.256506,0 l -30.23753,30.23753 a 2.5951204,2.5951204 67.5 0 0 1.835028,4.4301478 z M 57.749682,-17.577482 c 0.83501,-0.834969 2.173437,-0.882354 3.065404,-0.108526 l 0.004,-0.004 8.397042,8.3970417 0.140317,-3.7227717 h 7.31e-4 c -7.43e-4,-0.02374 -0.0011,-0.07125 -0.0011,-0.07125 -9.9e-5,-1.242781 1.007398,-2.250279 2.250179,-2.25018 1.242781,-9.9e-5 2.250279,1.007399 2.25018,2.25018 9e-6,0.02375 -3.57e-4,0.04751 -0.0011,0.07125 h 7.31e-4 l -0.140317,9.1578436 v 0.1680875 l -0.0062,-3.654e-4 -3.66e-4,3.654e-4 c -0.08804,1.1738885 -1.066052,2.0814852 -2.243237,2.0817268 -0.536581,-4.16e-5 -1.055481,-0.1918433 -1.463091,-0.5408032 l -0.0033,0.00329 -0.05445,-0.054446 c -0.04762,-0.043687 -0.09334,-0.089405 -0.137028,-0.1370278 l -12.170971,-12.1709709 0.0037,-0.0037 c -0.773958,-0.892117 -0.72641,-2.23081 0.108891,-3.065769 z"
+         transform="rotate(45,-10.448206,-1.4942556)" />
+      <path
+         style="fill:url(#markGrad);fill-opacity:1;stroke-width:0.0719112"
+         id="rect3"
+         width="40.732655"
+         height="5.6885424"
+         x="23.48177"
+         y="73.239967"
+         d="m 25.537587,73.239967 h 36.441108 a 2.2357292,2.2357292 45 0 1 2.235729,2.23573 v 1.396995 A 2.0558175,2.0558175 135 0 1 62.158607,78.92851 H 25.651353 A 2.1695833,2.1695833 45 0 1 23.48177,76.758926 v -1.463141 a 2.0558176,2.0558176 135 0 1 2.055817,-2.055818 z"
+         transform="rotate(45,46.244313,56.875382)" />
+    </g>
+  </g>
+</svg>

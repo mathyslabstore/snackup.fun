@@ -423,16 +423,6 @@ footer .legal-links a:hover {
   padding: 14px 26px;
 }
 
-/* Pending listings are not links: nothing to click yet, so no pointer, no lift. */
-.cta-pending {
-  cursor: default;
-}
-
-.cta-pending:hover {
-  transform: none;
-  opacity: 1;
-}
-
 /* ---- How it works ---- */
 
 .steps {

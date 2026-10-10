@@ -103,6 +103,64 @@
         </div>
       </section>
 
+      <section class="screens" aria-label="App screenshots">
+        <div class="screens-head">
+          <h2>Inside the app</h2>
+          <div class="shots-nav">
+            <button type="button" data-shots="-1" aria-label="Previous screenshots">‹</button>
+            <button type="button" data-shots="1" aria-label="Next screenshots">›</button>
+          </div>
+        </div>
+        <p class="screens-lead">Swipe through one snack, from the home screen to the progression tree.</p>
+        <div class="shots" tabindex="0">
+          <figure class="shot">
+            <img class="light" src="screens/en/01.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Home: today's activity, hearts and the current week">
+            <img class="dark" src="screens/en/01-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Home: today's activity, hearts and the current week">
+            <figcaption>Your day at a glance</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/02.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Picking a snack among several suggestions">
+            <img class="dark" src="screens/en/02-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Picking a snack among several suggestions">
+            <figcaption>A few snacks that fit your moment</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/03.webp" width="540" height="1200" loading="lazy" decoding="async" alt="A snack in progress, with the 3D animated exercise and the timer">
+            <img class="dark" src="screens/en/03-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="A snack in progress, with the 3D animated exercise and the timer">
+            <figcaption>Every exercise shown in 3D</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/04.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Feedback after a snack: easy, just right, hard">
+            <img class="dark" src="screens/en/04-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Feedback after a snack: easy, just right, hard">
+            <figcaption>How it felt tunes what's next</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/05.webp" width="540" height="1200" loading="lazy" decoding="async" alt="End-of-snack screen with the XP earned">
+            <img class="dark" src="screens/en/05-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="End-of-snack screen with the XP earned">
+            <figcaption>Every snack counts</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/06.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Day recap: minutes, how it felt and the list of snacks">
+            <img class="dark" src="screens/en/06-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Day recap: minutes, how it felt and the list of snacks">
+            <figcaption>Your day, snack by snack</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/07.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Week recap with the push, pull, legs, core, mobility balance">
+            <img class="dark" src="screens/en/07-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Week recap with the push, pull, legs, core, mobility balance">
+            <figcaption>A week that balances out</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/08.webp" width="540" height="1200" loading="lazy" decoding="async" alt="List of progression trees">
+            <img class="dark" src="screens/en/08-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="List of progression trees">
+            <figcaption>250 exercises in progression trees</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/en/09.webp" width="540" height="1200" loading="lazy" decoding="async" alt="A progression tree with mastered, in-progress and locked exercises">
+            <img class="dark" src="screens/en/09-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="A progression tree with mastered, in-progress and locked exercises">
+            <figcaption>What comes next unlocks on its own</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="steps">
         <h2>How it works</h2>
         <ol>
@@ -159,6 +217,14 @@
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
     "author": { "@type": "Organization", "name": "Mathys Lab", "email": "contact@snackup.fun" }
   }
+  </script>
+  <script>
+  document.querySelectorAll('[data-shots]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var row = document.querySelector('.shots');
+      row.scrollBy({ left: Number(b.dataset.shots) * row.clientWidth * 0.8, behavior: 'smooth' });
+    });
+  });
   </script>
   <script src="theme.js" defer></script>
 </body>

@@ -112,13 +112,8 @@
             <button type="button" data-shots="1" aria-label="Captures suivantes">›</button>
           </div>
         </div>
-        <p class="screens-lead">Glisse pour voir le parcours, de ton niveau de départ à l'arbre de progression.</p>
+        <p class="screens-lead">Glisse pour faire le tour de l'app.</p>
         <div class="shots" tabindex="0">
-          <figure class="shot">
-            <img class="light" src="screens/fr/00.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Profil : un curseur de niveau de départ par mouvement, puis l'objectif en snacks par jour">
-            <img class="dark" src="screens/fr/00-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Profil : un curseur de niveau de départ par mouvement, puis l'objectif en snacks par jour">
-            <figcaption>Tu règles ton niveau de départ et tes snacks par jour</figcaption>
-          </figure>
           <figure class="shot">
             <img class="light" src="screens/fr/01.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Accueil : activité du jour, cœurs et semaine en cours">
             <img class="dark" src="screens/fr/01-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Accueil : activité du jour, cœurs et semaine en cours">
@@ -163,6 +158,11 @@
             <img class="light" src="screens/fr/09.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Un arbre de progression, avec les exercices maîtrisés, en cours et à débloquer">
             <img class="dark" src="screens/fr/09-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Un arbre de progression, avec les exercices maîtrisés, en cours et à débloquer">
             <figcaption>La suite se débloque toute seule</figcaption>
+          </figure>
+          <figure class="shot">
+            <img class="light" src="screens/fr/00.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Profil : un curseur de niveau de départ par mouvement, puis l'objectif en snacks par jour">
+            <img class="dark" src="screens/fr/00-dark.webp" width="540" height="1200" loading="lazy" decoding="async" alt="Profil : un curseur de niveau de départ par mouvement, puis l'objectif en snacks par jour">
+            <figcaption>Tu règles ton niveau de départ et tes snacks par jour</figcaption>
           </figure>
         </div>
       </section>
@@ -225,12 +225,44 @@
   }
   </script>
   <script>
-  document.querySelectorAll('[data-shots]').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var row = document.querySelector('.shots');
-      row.scrollBy({ left: Number(b.dataset.shots) * row.clientWidth * 0.8, behavior: 'smooth' });
+  // Endless screenshot row: one copy of the set on each side of the real one.
+  // Whenever the scroll settles inside a copy, jump (instantly) by one set
+  // width to the matching real screenshot, so it never runs out either way.
+  (function () {
+    var row = document.querySelector('.shots');
+    if (!row) return;
+    var real = Array.prototype.slice.call(row.children);
+    function clone(el) {
+      var c = el.cloneNode(true);
+      c.setAttribute('aria-hidden', 'true');
+      c.setAttribute('inert', '');
+      return c;
+    }
+    real.forEach(function (el) { row.appendChild(clone(el)); });
+    real.slice().reverse().forEach(function (el) { row.insertBefore(clone(el), row.firstChild); });
+    var step = function () { return real[1].offsetLeft - real[0].offsetLeft; };
+    var setWidth = function () { return step() * real.length; };
+    var start = function () { return real[0].offsetLeft - row.firstElementChild.offsetLeft; };
+    function jump(dx) {
+      row.style.scrollSnapType = 'none';
+      row.scrollLeft += dx;
+      row.style.scrollSnapType = '';
+    }
+    function recenter() {
+      var s = start(), w = setWidth();
+      if (row.scrollLeft < s - w / 2) jump(w);
+      else if (row.scrollLeft >= s + w / 2) jump(-w);
+    }
+    jump(start() - row.scrollLeft);
+    var t;
+    row.addEventListener('scroll', function () { clearTimeout(t); t = setTimeout(recenter, 140); }, { passive: true });
+    window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(recenter, 140); });
+    document.querySelectorAll('[data-shots]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        row.scrollBy({ left: Number(b.dataset.shots) * step(), behavior: 'smooth' });
+      });
     });
-  });
+  })();
   </script>
   <script src="theme.js" defer></script>
 </body>

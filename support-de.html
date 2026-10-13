@@ -123,5 +123,109 @@
     </footer>
   </div>
   <script src="theme.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Brauche ich ein Benutzerkonto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein. SnackUp verlangt weder ein Konto noch eine Registrierung oder E-Mail-Adresse. Du öffnest die App und legst los."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wo werden meine Daten gespeichert?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ausschließlich auf deinem Telefon. Es gibt keinen SnackUp-Server, an den die App dein Profil, deinen Verlauf oder deinen Fortschritt senden könnte — wir haben darauf also keinen Zugriff, selbst wenn du uns darum bitten würdest. Deshalb funktioniert die App auch vollständig offline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie sichere ich meine Daten oder wechsle das Telefon?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Unter Einstellungen → Import / Export von Daten erstellt „Deine Daten exportieren“ eine Datei, die mit einer nur dir bekannten Passphrase verschlüsselt ist. Auf dem neuen Telefon stellt „Sicherung importieren“ sie wieder her. Bewahre die Passphrase gut auf: Ohne sie ist die Datei dauerhaft unlesbar, auch für uns. Eine tägliche automatische Sicherung über die Telefonsicherung (Google Drive unter Android, iCloud unter iOS) lässt sich im selben Bildschirm aktivieren."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie lösche ich alle meine Daten?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Die App zu deinstallieren genügt: Da alles lokal liegt, bleibt nirgendwo sonst etwas zurück. Wenn du die automatische Telefonsicherung aktiviert hast, lösche zusätzlich die zugehörige Sicherung in den Einstellungen von Google Drive bzw. iCloud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ich bekomme keine Erinnerungen.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In der Praxis ist es fast immer einer dieser vier Punkte: Ist die Benachrichtigungsberechtigung für SnackUp in den Telefoneinstellungen erteilt? Ist unter Android die Berechtigung „Wecker und Erinnerungen“ (exakte Alarme) erteilt? Ist die Akku-Optimierung für die App aktiv? Manche Hersteller (Xiaomi, Huawei, Samsung, OnePlus…) stoppen Apps im Hintergrund sehr aggressiv; SnackUp muss dort weiterlaufen dürfen. Umfassen deine Aufsteh- und Schlafenszeiten wirklich den gewünschten Tag? Außerhalb davon wird nie eine Erinnerung geplant. Der Bildschirm Einstellungen → Benachrichtigungen → Geplante Benachrichtigungen anzeigen zeigt genau, was eingeplant ist: Ist er leer, liegt die Ursache in der Liste oben."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Warum fragt die App nie nach meinem Equipment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Weil sie es aus dem ableitet, was du tatsächlich machst: Eine mit dem Widerstandsband abgeschlossene Übung verrät ihr, dass du ein Band hast. Das ist eine bewusste Entscheidung — eine Ankreuzliste beim ersten Start ist lang, langweilig und schon am nächsten Tag überholt. Du kannst Equipment an einem Ort trotzdem über das „+“ im Orte-Bildschirm angeben, was für alles nützlich ist, das sich nicht erraten lässt (eine Klimmzugstange, ein Fitnessstudio)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist der Standort verpflichtend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nein, er ist vollständig optional, die App funktioniert auch ohne. Wenn du ihn aktivierst, dient er ausschließlich dazu, deine gewohnten Orte zu erkennen und die Vorschläge besser darauf abzustimmen; die Auswertung erfolgt auf dem Gerät, und es wird keine Position an uns übermittelt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Was genau macht die Gesundheits-Synchronisation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Wenn du sie aktivierst, schreibt SnackUp deine abgeschlossenen Snacks in Health Connect (Android) bzw. in die Health-App (iOS): Art der Aktivität, Name der Übung, Start- und Endzeit. Sie liest niemals etwas — es wird keine Leseberechtigung angefragt, und die App sieht weder deine Schritte noch deinen Schlaf noch anderswo aufgezeichnete Trainings. „Alles löschen, was SnackUp gesendet hat“ unter Einstellungen → Gesundheits-Synchronisation entfernt alle geschriebenen Einträge auf einmal."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Eine Übung tut weh oder passt mir nicht.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Während des Snacks blendet „Nicht mehr vorschlagen“ sie dauerhaft aus; dein Fortschritt läuft weiterhin durch sie hindurch, und was sie freischaltet, bleibt erreichbar. Diese Funktion ist kostenlos und bleibt es. Die Liste ist jederzeit umkehrbar unter Einstellungen → Ausgeblendete Übungen. „Zu schwer“ und „Konnte ich nicht machen“ sind etwas anderes: Sie passen den nächsten Vorschlag an, ohne jemals dein tatsächliches Niveau zu senken."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie verwalte oder kündige ich das Premium-Abonnement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Das Abonnement wird vom Store abgerechnet, nicht von uns: Die Kündigung erfolgt daher in deinen Google-Play-Abos oder auf dem iPhone unter Einstellungen → dein Name → Abonnements. Der Premium-Zugang bleibt bis zum Ende der bereits bezahlten Periode aktiv. Auch Rückerstattungen laufen über den Store: Wir haben weder Zugriff auf deine Zahlungsmittel noch auf deine Transaktionen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ich habe das Telefon gewechselt und mein Premium ist weg.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Im Premium-Bildschirm fragt „Deine Käufe wiederherstellen“ den Store erneut mit deinem Google- bzw. Apple-Konto ab und aktiviert das Abonnement wieder. Du musst dafür mit demselben Konto angemeldet sein, mit dem gekauft wurde. Beachte: Dein Trainingsverlauf wandert nicht mit dem Abonnement mit — dafür ist der verschlüsselte Export oben da."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ist die App kostenlos nutzbar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, und ohne Mauer: Die Vorschläge, die komplette Woche, die Erinnerungen, der Verlauf und die verschlüsselten Sicherungen sind dauerhaft kostenlos. Das Premium-Abonnement ergänzt Komfort und Detailtiefe; es schaltet nicht das Produkt frei."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

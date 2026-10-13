@@ -123,5 +123,109 @@
     </footer>
   </div>
   <script src="theme.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Faut-il créer un compte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non. SnackUp ne demande ni compte, ni inscription, ni adresse e-mail. Tu ouvres l'app et tu commences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Où sont stockées mes données?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uniquement sur ton téléphone. Il n'existe aucun serveur SnackUp vers lequel l'app enverrait ton profil, ton historique ou ta progression — nous n'y avons donc aucun accès, même si tu nous le demandais. C'est aussi pour ça que l'app fonctionne entièrement hors ligne."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment sauvegarder mes données ou changer de téléphone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dans Réglages → Import / export de données, « Exporter tes données» crée un fichier chiffré par une phrase secrète que toi seul·e connais. Sur le nouveau téléphone, « Importer une sauvegarde» le restaure. Garde bien la phrase secrète: sans elle, le fichier est définitivement illisible, y compris pour nous. Une sauvegarde automatique quotidienne, via la sauvegarde du téléphone (Google Drive sur Android, iCloud sur iOS), peut aussi être activée depuis le même écran."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment supprimer toutes mes données?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Désinstaller l'application suffit: tout étant local, rien ne subsiste ailleurs. Si tu as activé la sauvegarde automatique du téléphone, pense à supprimer aussi la sauvegarde correspondante dans les réglages de Google Drive ou d'iCloud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Je ne reçois pas les rappels.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dans l'ordre, ce sont presque toujours ces quatre points: l'autorisation de notification est-elle accordée à SnackUp dans les réglages du téléphone; sur Android, l'autorisation « alarmes et rappels» (alarmes exactes) est-elle accordée; l'optimisation de batterie est-elle active sur l'app? Certains constructeurs (Xiaomi, Huawei, Samsung, OnePlus…) suspendent les apps en arrière-plan de façon agressive; il faut y autoriser SnackUp à rester active; tes heures de réveil et de coucher encadrent-elles bien la journée voulue: aucun rappel n'est programmé en dehors. L'écran Réglages → Notifications → Voir les notifications prévues affiche exactement ce qui est programmé: s'il est vide, le problème est dans la liste ci-dessus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Pourquoi l'app ne me demande jamais quel matériel j'ai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Parce qu'elle le déduit de ce que tu fais réellement: un exercice validé avec un élastique lui apprend que tu as un élastique. C'est un choix de conception — une liste de cases à cocher au démarrage est longue, ennuyeuse, et fausse dès le lendemain. Tu peux malgré tout déclarer du matériel présent à un lieu avec le « +» de l'écran des lieux, utile pour ce qui ne peut pas être deviné (une barre de traction, une salle de sport)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La localisation est-elle obligatoire?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, elle est entièrement optionnelle et l'app fonctionne sans. Si tu l'actives, elle sert uniquement à reconnaître tes lieux habituels pour mieux choisir les exercices proposés; le traitement se fait sur l'appareil et aucune position ne nous est transmise."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que fait exactement la synchronisation santé?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Si tu l'actives, SnackUp écrit tes snacks terminés dans Health Connect (Android) ou l'app Santé (iOS): type d'activité, nom de l'exercice, heure de début et de fin. Elle ne lit jamais rien — aucune autorisation de lecture n'est demandée, et l'app ne voit ni tes pas, ni ton sommeil, ni tes séances faites ailleurs. « Supprimer tout ce que SnackUp a envoyé», dans Réglages → Synchronisation santé, retire d'un coup toutes les entrées écrites."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Un exercice me fait mal ou ne me convient pas.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pendant le snack, « Ne plus me le proposer» le masque définitivement; ta progression continue de passer à travers, et ce qu'il débloque reste accessible. Cette fonction est gratuite et le restera. La liste est réversible à tout moment dans Réglages → Exercices masqués. « Trop dur» et « Pas pu le faire» sont différents: ils ajustent la proposition suivante sans jamais abaisser ton niveau réel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment gérer ou résilier l'abonnement premium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'abonnement est facturé par la boutique, pas par nous: la résiliation se fait donc dans tes abonnements Google Play ou, sur iPhone, dans Réglages → ton nom → Abonnements. L'accès premium reste actif jusqu'à la fin de la période déjà payée. Pour un remboursement, il faut passer par la boutique concernée: nous n'avons accès ni à tes moyens de paiement, ni à tes transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "J'ai changé de téléphone et mon premium a disparu.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dans l'écran Premium, « Restaurer tes achats» réinterroge la boutique avec ton compte Google ou Apple et réactive l'abonnement. Il faut évidemment être connecté au même compte que celui qui a servi à l'achat. À noter: ton historique d'entraînement, lui, ne voyage pas avec l'abonnement — il se transfère par l'export chiffré ci-dessus."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'app est-elle utilisable gratuitement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, et sans mur: les propositions, la semaine complète, les rappels, l'historique et les sauvegardes chiffrées sont gratuits, pour toujours. L'abonnement premium ajoute du confort et du détail, il ne débloque pas le produit."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

@@ -123,5 +123,109 @@
     </footer>
   </div>
   <script src="theme.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need an account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. SnackUp asks for no account, no sign-up and no email address. You open the app and start."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is my data stored?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On your phone only. There is no SnackUp server the app could send your profile, history or progression to — which means we have no access to it, even if you asked us for it. It is also why the app works entirely offline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I back up my data or move to a new phone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under Settings → Import / export data, \"Export your data\" creates a file encrypted with a passphrase only you know. On the new phone, \"Import a backup\" restores it. Keep that passphrase safe: without it the file is permanently unreadable, including by us. A daily automatic backup, through your phone's own backup (Google Drive on Android, iCloud on iOS), can also be switched on from the same screen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I delete all my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Uninstalling the app is enough: everything being local, nothing is left anywhere else. If you enabled your phone's automatic backup, remember to delete the corresponding backup in your Google Drive or iCloud settings too."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I'm not getting any reminders.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In practice it is nearly always one of these four: is the notification permission granted to SnackUp in your phone settings; on Android, is the \"alarms & reminders\" (exact alarms) permission granted; is battery optimisation active for the app? Some manufacturers (Xiaomi, Huawei, Samsung, OnePlus…) suspend background apps aggressively, and SnackUp has to be allowed to keep running; do your wake and sleep times actually cover the day you have in mind: no reminder is ever scheduled outside them. The screen Settings → Notifications → View scheduled notifications shows exactly what is queued: if it is empty, the cause is in the list above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why does the app never ask what equipment I own?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Because it works it out from what you actually do: an exercise completed with a resistance band tells it you have a band. That is a design choice — a checklist at first launch is long, dull, and out of date by the next day. You can still declare equipment present at a place with the \"+\" on the places screen, which is useful for what cannot be guessed (a pull-up bar, a gym)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is location required?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, it is entirely optional and the app works without it. If you turn it on, it is used only to recognise your usual places so the suggestions fit them better; everything is processed on the device and no position is ever sent to us."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What exactly does the health sync do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you enable it, SnackUp writes your completed snacks into Health Connect (Android) or the Health app (iOS): activity type, exercise name, start and end time. It never reads anything — no read permission is requested, and the app sees neither your steps, nor your sleep, nor workouts recorded elsewhere. \"Delete everything SnackUp sent\", under Settings → Health sync, removes every entry it created in one go."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "An exercise hurts, or doesn't suit me.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "During the snack, \"Stop offering this one\" hides it for good; your progression still runs through it, and whatever it unlocks stays reachable. This feature is free and will stay free. The list is reversible at any time under Settings → Hidden exercises. \"Too hard\" and \"Couldn't do it\" are different: they adjust the next suggestion without ever lowering your real level."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I manage or cancel the premium subscription?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The subscription is billed by the store, not by us, so cancellation happens in your Google Play subscriptions or, on iPhone, under Settings → your name → Subscriptions. Premium access stays active until the end of the period already paid for. Refunds go through the store as well: we have access to neither your payment methods nor your transactions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "I changed phone and my premium is gone.",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "On the Premium screen, \"Restore your purchases\" asks the store again using your Google or Apple account and reactivates the subscription. You do need to be signed in with the same account that made the purchase. Note that your training history does not travel with the subscription — that moves via the encrypted export above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the app usable for free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, and without a wall: the suggestions, the full week, the reminders, the history and the encrypted backups are free, forever. The premium subscription adds comfort and detail; it does not unlock the product."
+        }
+      }
+    ]
+  }
+  </script>
 </body>
 </html>

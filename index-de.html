@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SnackUp — Sport in Snacks &amp; Level up</title>
-<meta name="description" content="SnackUp verwandelt Sport in kurze Mikro-Einheiten, verteilt über deinen Tag. Ohne Schuldgefühl, einfach Snacks, die sich summieren.">
+<title>SnackUp — Mikro-Workouts für zwischendurch</title>
+<meta name="description" content="Keine Zeit fürs Training? SnackUp verteilt Kraftübungen von 30 Sekunden bis wenigen Minuten über deinen Tag. Kostenlos, ohne Konto, offline.">
 <link rel="canonical" href="https://snackup.fun/index-de.html">
 <link rel="alternate" hreflang="fr" href="https://snackup.fun/index.html">
 <link rel="alternate" hreflang="en" href="https://snackup.fun/index-en.html">
@@ -17,10 +17,17 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SnackUp">
 <meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:url" content="https://snackup.fun/index-de.html">
 <meta property="og:title" content="SnackUp — Sport, in Snacks.">
 <meta property="og:description" content="Mikro-Einheiten von wenigen Minuten über den Tag verteilt, die sich zu einer ausgewogenen Woche summieren. Ohne Schuldgefühl, und komplett auf deinem Telefon.">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://snackup.fun/og/og-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SnackUp: der Startbildschirm und eine laufende Übung">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://snackup.fun/og/og-de.png">
 <link rel="stylesheet" href="styles.css">
 <script>try{var t=localStorage.getItem('snackup-theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 </head>
@@ -217,14 +224,54 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "SnackUp",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "Android, iOS",
-    "url": "https://snackup.fun/",
-    "description": "Mikro-Einheiten von 30 Sekunden bis wenigen Minuten, über den Tag vorgeschlagen, die sich zu einem ausgewogenen Wochenvolumen summieren.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
-    "author": { "@type": "Organization", "name": "Mathys Lab", "email": "contact@snackup.fun" }
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://snackup.fun/#org",
+        "name": "Mathys Lab",
+        "url": "https://snackup.fun/",
+        "email": "contact@snackup.fun",
+        "logo": "https://snackup.fun/apple-touch-icon.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://snackup.fun/#website",
+        "name": "SnackUp",
+        "url": "https://snackup.fun/",
+        "publisher": {
+          "@id": "https://snackup.fun/#org"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "name": "SnackUp",
+        "url": "https://snackup.fun/index-de.html",
+        "inLanguage": "de",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "Fitness",
+        "operatingSystem": "Android, iOS",
+        "description": "Kraftübungen von 30 Sekunden bis wenigen Minuten, über den Tag vorgeschlagen je nach Zeit, Ort und Ausrüstung, die sich zu einem ausgewogenen Wochenvolumen pro Muskelgruppe summieren.",
+        "image": "https://snackup.fun/og/og-de.png",
+        "screenshot": [
+          "https://snackup.fun/screens/de/01.webp",
+          "https://snackup.fun/screens/de/02.webp",
+          "https://snackup.fun/screens/de/03.webp",
+          "https://snackup.fun/screens/de/07.webp",
+          "https://snackup.fun/screens/de/09.webp"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        },
+        "author": {
+          "@id": "https://snackup.fun/#org"
+        },
+        "publisher": {
+          "@id": "https://snackup.fun/#org"
+        }
+      }
+    ]
   }
   </script>
   <script>

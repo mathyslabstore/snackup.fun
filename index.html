@@ -3,6 +3,11 @@
 <head>
 <meta name="google-site-verification" content="kOFRQIZcJuG3bXc1jq9SQAA1g7NOacJnX1Jugd5GZVc" />
 <meta charset="utf-8">
+<script>
+/* First visit only: follow the browser language. Never runs once a language was picked
+   in the switcher (theme.js stores it), and skips crawlers so Google still indexes FR. */
+try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthouse/i.test(navigator.userAgent)){var l=((navigator.languages&&navigator.languages[0])||navigator.language||'').slice(0,2).toLowerCase();if(l==='de')location.replace('index-de.html'+location.hash);else if(l&&l!=='fr')location.replace('index-en.html'+location.hash);}}catch(e){}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SnackUp — Exercice snacking &amp; level up</title>
 <meta name="description" content="SnackUp transforme le sport en micro-séances de quelques minutes réparties dans ta journée. Pas de culpabilité, juste des snacks qui s'accumulent.">

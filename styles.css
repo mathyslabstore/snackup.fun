@@ -423,6 +423,51 @@ footer .legal-links a:hover {
   padding: 14px 26px;
 }
 
+/* ---- FAQ ---- */
+
+.faq {
+  padding: 72px 0 0;
+}
+
+.faq details {
+  background: var(--surface);
+  border-radius: 20px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 52px 18px 22px;
+  font-weight: 700;
+  font-size: 17px;
+  position: relative;
+}
+
+.faq summary::-webkit-details-marker { display: none; }
+
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--seed-dark);
+}
+
+.faq details[open] summary::after { content: "–"; }
+
+.faq details p {
+  margin: 0;
+  padding: 0 22px 20px;
+  color: var(--text-soft);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 /* ---- How it works ---- */
 
 .steps {
@@ -430,6 +475,7 @@ footer .legal-links a:hover {
 }
 
 .steps h2,
+.faq h2,
 .privacy-strip h2 {
   font-size: 28px;
   font-weight: 800;

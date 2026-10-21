@@ -37,15 +37,15 @@
     });
   }, { rootMargin: '0px 0px -8% 0px' });
 
-  // a panel's tiles fade in one after the other, in reading order, 0.5 s apart
+  // a panel's tiles fade in one after the other, in reading order, 0.2 s apart
   function reveal(panel) {
     if (still.matches) return;
-    var tiles = Array.prototype.slice.call(panel.querySelectorAll('.tile, .privacy-note'));
+    var tiles = Array.prototype.slice.call(panel.querySelectorAll('.tile'));
     tiles.forEach(function (t) { clearTimeout(t._shown); t.classList.remove('in'); t.style.transitionDelay = ''; t.classList.add('reveal'); });
     // commit the hidden state first (a rAF alone runs before the style pass, so the
     // tiles would land straight on 'in' with nothing to fade from)
     void panel.offsetHeight;
-    tiles.forEach(function (t, i) { t.style.transitionDelay = (120 + i * 500) + 'ms'; show(t); });
+    tiles.forEach(function (t, i) { t.style.transitionDelay = (120 + i * 200) + 'ms'; show(t); });
   }
 
   // ease the stage from `from` to `to` (px), then hand its height back to the page

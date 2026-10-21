@@ -475,8 +475,7 @@ footer .legal-links a:hover {
 }
 
 .steps h2,
-.faq h2,
-.privacy-strip h2 {
+.faq h2 {
   font-size: 28px;
   font-weight: 800;
   letter-spacing: -0.5px;
@@ -527,60 +526,6 @@ footer .legal-links a:hover {
   margin: 0;
 }
 
-/* ---- What stays with you ---- */
-
-.privacy-strip {
-  margin-top: 72px;
-  background: var(--mint-bg);
-  color: var(--mint-fg);
-  border-radius: var(--radius);
-  padding: 36px 32px;
-}
-
-.privacy-lead {
-  font-size: 16px;
-  line-height: 1.55;
-  margin: 0 0 22px;
-  max-width: 620px;
-  opacity: 0.95;
-}
-
-.privacy-strip ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.privacy-strip li {
-  font-size: 14px;
-  line-height: 1.5;
-  padding-left: 22px;
-  position: relative;
-  opacity: 0.95;
-}
-
-.privacy-strip li::before {
-  content: "¹3";
-  position: absolute;
-  left: 0;
-  font-weight: 800;
-}
-
-.privacy-note {
-  font-size: 13px;
-  line-height: 1.55;
-  margin: 24px 0 0;
-  padding-top: 18px;
-  border-top: 1px solid currentColor;
-  opacity: 0.8;
-}
-
-.privacy-note a {
-  color: inherit;
-}
 
 /* ---- Support page ---- */
 
@@ -642,10 +587,8 @@ button:focus-visible {
 @media (max-width: 760px) {
   .steps ol { grid-template-columns: 1fr; }
   .steps { padding-top: 56px; }
-  .privacy-strip { margin-top: 56px; padding: 30px 22px; }
-  .privacy-strip ul { grid-template-columns: 1fr; }
   .hero .cta-row { justify-content: center; }
-  .steps h2, .privacy-strip h2 { font-size: 24px; }
+  .steps h2 { font-size: 24px; }
 }
 
 /* ---- Inside the app: real screenshots, swiped sideways ---- */
@@ -881,11 +824,6 @@ button:focus-visible {
   .tile-wide .tile-illu { height: 150px; right: 50%; transform: translateX(50%); }
 }
 
-.local .privacy-note {
-  border-top-color: rgba(20, 33, 29, 0.14);
-  color: var(--text-soft);
-  opacity: 1;
-}
 
 /* ---- Exercise snack (post 02) and sessions in sets (post 07), same bento tiles ---- */
 
@@ -1024,7 +962,6 @@ button:focus-visible {
 .door-panel { position: absolute; top: 0; left: 0; right: 0; visibility: hidden; }
 .door-panel.open { position: relative; visibility: visible; }
 .door-panel > div { padding-top: 16px; }
-.door-panel .privacy-note { margin-bottom: 4px; }
 .door-grid { scroll-margin-top: 16px; }
 
 /* Fade-in, added by doors.js only (no script = everything visible). The class is

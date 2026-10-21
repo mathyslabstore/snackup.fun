@@ -886,3 +886,73 @@ button:focus-visible {
   color: var(--text-soft);
   opacity: 1;
 }
+
+/* ---- Exercise snack (post 02) and sessions in sets (post 07), same bento tiles ---- */
+
+.bento-section { padding: 72px 0 0; }
+
+.tile .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.tile .chips span {
+  font-weight: 800;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: inherit;
+}
+
+.tile .big {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -2.5px;
+  margin: 4px 0 12px;
+}
+
+.tile .src {
+  font-size: 12.5px;
+  line-height: 1.5;
+  opacity: 0.8;
+  margin-top: auto;
+  padding-top: 18px;
+}
+
+/* 22.5 sets: 18 strength squares, 4.5 mobility. */
+.tile-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  align-items: center;
+}
+.sets {
+  display: grid;
+  grid-template-columns: repeat(6, 26px);
+  gap: 6px;
+}
+.sets i { width: 26px; height: 26px; border-radius: 8px; background: #3FB68B; display: block; }
+.sets i.m { background: #63C7FF; }
+.sets i.half { width: 13px; border-radius: 8px 0 0 8px; }
+.sets-key { font-size: 13px; font-weight: 700; margin-top: 12px; opacity: 0.85; display: flex; flex-direction: column; gap: 4px; }
+.sets-key b { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; vertical-align: 0; }
+
+.dose { list-style: none; margin: 14px 0 0; padding: 0; }
+.dose li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  border-top: 1px solid currentColor;
+  border-color: color-mix(in srgb, currentColor 18%, transparent);
+}
+.dose .n { font-size: 30px; font-weight: 800; letter-spacing: -1px; width: 44px; flex: none; }
+.dose .what { flex: 1; font-size: 14px; line-height: 1.35; }
+.dose .what small { display: block; opacity: 0.8; font-size: 13px; }
+.dose .sess { font-size: 30px; font-weight: 800; letter-spacing: -1px; text-align: right; }
+.dose .sess small { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0; opacity: 0.8; }
+
+@media (max-width: 760px) {
+  .bento-section { padding-top: 56px; }
+  .tile-split { grid-template-columns: 1fr; }
+  .tile-hero.tile-split { padding-bottom: 36px; }
+  .tile .big { font-size: 54px; }
+}

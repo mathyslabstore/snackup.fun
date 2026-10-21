@@ -957,7 +957,7 @@ button:focus-visible {
   .tile .big { font-size: 54px; }
 }
 
-/* ---- SnackUp in 3 numbers: door cards that unfold their bento panel ---- */
+/* ---- SnackUp in 3 numbers: door cards over one shared stage ---- */
 
 .doors { padding: 72px 0 0; }
 .doors h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 24px; }
@@ -965,20 +965,24 @@ button:focus-visible {
 .door-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 16px;
+  gap: 16px;
 }
 
 .door {
-  grid-row: 1;
   border: none;
   font: inherit;
   text-align: left;
   cursor: pointer;
   min-height: 210px;
   gap: 8px;
+  -webkit-tap-highlight-color: transparent;
   transition: transform 0.15s ease, opacity 0.2s ease;
 }
 .door:hover { transform: translateY(-2px); }
+/* No tap flash, and keep the card's own corners when focused (the global
+   button:focus-visible rule would square them to 6px). */
+.door:focus { outline: none; }
+.door:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: var(--radius); }
 .door-grid.has-open .door[aria-expanded="false"] { opacity: 0.55; }
 .door-grid.has-open .door[aria-expanded="false"]:hover { opacity: 0.85; }
 
@@ -1006,63 +1010,50 @@ button:focus-visible {
 }
 .door[aria-expanded="true"] .go-arrow { transform: rotate(90deg); }
 
-/* All panels share the row under the doors; only the open one has height.
-   Opening animates, closing is instant so two panels never overlap mid-swap. */
-.door-panel {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: grid;
-  grid-template-rows: 0fr;
+/* One stage under the three doors. It never drops back to 0 between two doors:
+   doors.js sets its height straight to the panel on first open, then eases it
+   from one panel's height to the next. Only the open panel takes space; the
+   others sit on top of it, invisible, so they stay in the page for indexing. */
+.door-stage {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  scroll-margin-top: 16px;
 }
-.door-panel > div { overflow: hidden; min-height: 0; }
-.door-panel.open {
-  grid-template-rows: 1fr;
-  transition: grid-template-rows 0.4s ease;
-}
-.door-panel.open > div { padding-top: 16px; }
+.door-stage.easing { transition: height 0.35s ease; }
+.door-panel { position: absolute; top: 0; left: 0; right: 0; visibility: hidden; }
+.door-panel.open { position: relative; visibility: visible; }
+.door-panel > div { padding-top: 16px; }
 .door-panel .privacy-note { margin-bottom: 4px; }
-
-@media (max-width: 760px) {
-  .doors { padding-top: 56px; }
-  .doors h2 { font-size: 24px; }
-  .door-grid { grid-template-columns: 1fr; }
-  .door, .door-panel { grid-row: auto; }
-  .door { min-height: 0; margin-top: 12px; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: center; }
-  .door .num { font-size: 44px; grid-row: span 2; min-width: 104px; }
-  .door .go { margin-top: 4px; }
-  .door-grid > .door:first-child { margin-top: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .door, .door .go-arrow, .door-panel.open { transition: none; }
-}
-
-/* No Android tap flash, and keep the card's own corners when focused (the global
-   button:focus-visible rule would square them to 6px). */
-.door { -webkit-tap-highlight-color: transparent; }
-.door:focus { outline: none; }
-.door:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: var(--radius); }
-.door-grid, .door { scroll-margin-top: 16px; }
+.door-grid { scroll-margin-top: 16px; }
 
 /* Fade-in, added by doors.js only (no script = everything visible). The class is
    removed once shown, so hover and has-open keep their own quick transitions. */
-.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
-.reveal.in { opacity: 1; transform: none; }
+.reveal { opacity: 0; transform: translateY(18px); }
+/* the transition lives on the shown state only: hiding is instant, so a tile that
+   was visible a moment ago starts its fade from 0 instead of bouncing back from 1 */
+.reveal.in { opacity: 1; transform: none; transition: opacity 0.55s ease, transform 0.55s ease; }
 
-/* Phone: a door must never look disabled, its arrow points where the panel opens
-   (down, up once open) and nudges once on arrival; the panel opens at full height
-   at once, so the page never slides back while it scrolls to the door. */
+/* Phone: a door must never look disabled; its arrow points where the stage opens
+   (down, up once open) and nudges once on arrival. */
 @media (max-width: 760px) {
+  .doors { padding-top: 56px; }
+  .doors h2 { font-size: 24px; }
+  .door-grid { grid-template-columns: 1fr; gap: 12px; }
+  .door { min-height: 0; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: center; }
+  .door .num { font-size: 44px; grid-row: span 2; min-width: 104px; }
+  .door .go { margin-top: 4px; }
   .door-grid.has-open .door[aria-expanded="false"] { opacity: 1; }
   .door .go-arrow { transform: rotate(90deg); }
   .door[aria-expanded="true"] .go-arrow { transform: rotate(-90deg); }
-  .door-panel.open { transition: none; }
   .door.nudge .go-arrow { animation: door-nudge 0.9s ease-in-out 2; }
 }
 @keyframes door-nudge {
   0%, 100% { translate: 0 0; }
   50% { translate: 0 5px; }
 }
+
 @media (prefers-reduced-motion: reduce) {
+  .door, .door .go-arrow, .door-stage.easing, .reveal { transition: none; }
   .door.nudge .go-arrow { animation: none; }
 }

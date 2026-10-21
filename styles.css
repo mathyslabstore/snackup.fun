@@ -760,3 +760,129 @@ button:focus-visible {
 }
 :root[data-theme="dark"] .shot img.light { display: none; }
 :root[data-theme="dark"] .shot img.dark { display: block; }
+
+/* ---- 100% local: the Instagram post 10 carousel, rebuilt as a bento grid ---- */
+
+:root {
+  --sky-bg:  #DFF0FB;   --sky-fg:  #2A6C99;
+  --blush-bg:#FBE3EC;   --blush-fg:#99315B;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sky-bg:  #1B2C38;  --sky-fg:  #A8D8F5;
+    --blush-bg:#381F2A;  --blush-fg:#F7B8CF;
+  }
+}
+:root[data-theme="dark"] {
+  --sky-bg:  #1B2C38;  --sky-fg:  #A8D8F5;
+  --blush-bg:#381F2A;  --blush-fg:#F7B8CF;
+}
+
+.local {
+  padding: 72px 0 0;
+}
+
+.local-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tile {
+  border-radius: var(--radius);
+  padding: 28px 26px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tile.mint  { background: var(--mint-bg);  color: var(--mint-fg); }
+.tile.lav   { background: var(--lav-bg);   color: var(--lav-fg); }
+.tile.peach { background: var(--peach-bg); color: var(--peach-fg); }
+.tile.sky   { background: var(--sky-bg);   color: var(--sky-fg); }
+.tile.blush { background: var(--blush-bg); color: var(--blush-fg); }
+
+.tile .kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin-bottom: 12px;
+}
+
+.tile h3 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.4px;
+  margin: 0 0 10px;
+}
+
+.tile p {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.tile-illu {
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  height: 62%;
+  pointer-events: none;
+}
+
+/* The question and its one-word answer: two columns wide, room left for the illustration. */
+.tile-hero {
+  grid-column: span 2;
+  padding: 36px 34px;
+  min-height: 300px;
+}
+.tile-hero h2 {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.6px;
+  margin: 0;
+  max-width: 62%;
+}
+.tile-hero .answer {
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin: 18px 0 18px;
+}
+.tile-hero p:not(.answer) { max-width: 58%; }
+/* "Nirgendwohin." is two letters longer than the illustration leaves room for at 76px. */
+:lang(de) .tile-hero .answer { font-size: 54px; letter-spacing: -2px; }
+.tile-hero .tile-illu { height: 88%; right: 28px; }
+
+.tile-tall { grid-row: span 2; padding-bottom: 200px; }
+.tile-tall .emoji { font-size: 56px; line-height: 1; margin-bottom: 14px; }
+.tile-tall .tile-illu { height: 180px; right: 50%; transform: translateX(50%); }
+
+.tile-wide { grid-column: span 2; padding-right: 230px; }
+.tile-wide .tile-illu { height: 82%; right: 28px; }
+
+@media (max-width: 760px) {
+  .local { padding-top: 56px; }
+  .local-grid { grid-template-columns: 1fr; }
+  .tile-hero, .tile-wide { grid-column: auto; }
+  .tile-tall { grid-row: auto; }
+  .tile-hero { min-height: 0; padding-bottom: 220px; }
+  .tile-hero h2, .tile-hero p:not(.answer) { max-width: none; }
+  .tile-hero .answer { font-size: 60px; }
+  .tile-hero .tile-illu { height: 200px; right: 50%; transform: translateX(50%); }
+  .tile-wide { padding-right: 26px; padding-bottom: 170px; }
+  .tile-wide .tile-illu { height: 150px; right: 50%; transform: translateX(50%); }
+}
+
+.local .privacy-note {
+  border-top-color: rgba(20, 33, 29, 0.14);
+  color: var(--text-soft);
+  opacity: 1;
+}

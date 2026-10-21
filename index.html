@@ -234,15 +234,44 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
         </details>
       </section>
 
-      <section class="privacy-strip">
-        <h2>Ce qui reste chez toi</h2>
-        <p class="privacy-lead">SnackUp est une app locale. Il n'y a pas de serveur en face&nbsp;: pas de compte, pas de profil sur Internet, rien à supprimer ailleurs que sur ton téléphone.</p>
-        <ul>
-          <li><strong>Aucun compte</strong> — pas d'inscription, pas d'adresse e-mail à donner.</li>
-          <li><strong>Tout reste sur l'appareil</strong> — et s'exporte, chiffré, quand tu changes de téléphone.</li>
-          <li><strong>Hors ligne</strong> — l'app fonctionne entièrement sans connexion.</li>
-          <li><strong>Ni pub, ni traceur</strong> — aucune mesure d'audience, aucune donnée revendue.</li>
-        </ul>
+      <section class="local" id="local" aria-label="100 % local">
+        <div class="local-grid">
+          <div class="tile mint tile-hero">
+            <span class="kicker">Tes données</span>
+            <h2>Où vont tes données d&#39;entraînement&nbsp;?</h2>
+            <p class="answer">Nulle part.</p>
+            <p>Chaque snack, chaque série, chaque jour d&#39;affilée vit sur <strong>ton téléphone</strong>. Pas sur un serveur&nbsp;: il n&#39;y en a pas.</p>
+            <img class="tile-illu" src="illus/woman-happy-with-phone.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile lav tile-tall">
+            <span class="kicker">Mode avion</span>
+            <div class="emoji" aria-hidden="true">✈️</div>
+            <h3>Marche hors ligne.</h3>
+            <p>Suggestions, progression, rappels&nbsp;: tout est calculé sur ton téléphone. Même les notifications sont programmées en local.</p>
+            <img class="tile-illu" src="illus/woman-meditating.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile sky">
+            <span class="kicker">Aucun compte</span>
+            <h3>Ouvre l&#39;app. C&#39;est tout.</h3>
+            <p>Pas d&#39;e-mail, pas de mot de passe, pas d&#39;écran d&#39;inscription.</p>
+          </div>
+          <div class="tile blush">
+            <span class="kicker">Aucun traceur</span>
+            <h3>Ni analytics, ni pub.</h3>
+            <p>Aucune mesure d&#39;audience&nbsp;: ce que tu fais dans l&#39;app ne remonte nulle part, et aucune donnée n&#39;est revendue.</p>
+          </div>
+          <div class="tile peach tile-wide">
+            <span class="kicker">Tes lieux</span>
+            <h3>Ta localisation reste sur le téléphone.</h3>
+            <p>Facultative. Elle sert juste à retenir quel endroit a une barre de traction&nbsp;: un relevé rapide au moment du snack, jamais en arrière-plan.</p>
+            <img class="tile-illu" src="illus/man-lifting.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile mint">
+            <span class="kicker">Sauvegarde</span>
+            <h3>Un fichier à toi, verrouillé par ta phrase de passe.</h3>
+            <p>Chiffré en AES-256, pour changer de téléphone. La sauvegarde automatique (premium, à activer) passe par ton propre compte Google ou iCloud, jamais par nous.</p>
+          </div>
+        </div>
         <p class="privacy-note">Gratuit, sans mur&nbsp;: le moteur, la semaine complète, les rappels, l'historique et les sauvegardes chiffrées le restent. Un abonnement premium facultatif ajoute du confort et finance la suite. Le détail est dans les <a href="nutzungsbedingungen.html">conditions d'utilisation</a> et la <a href="datenschutz.html">politique de confidentialité</a>.</p>
       </section>
     </main>

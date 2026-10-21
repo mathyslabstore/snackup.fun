@@ -1048,3 +1048,21 @@ button:focus-visible {
    removed once shown, so hover and has-open keep their own quick transitions. */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
 .reveal.in { opacity: 1; transform: none; }
+
+/* Phone: a door must never look disabled, its arrow points where the panel opens
+   (down, up once open) and nudges once on arrival; the panel opens at full height
+   at once, so the page never slides back while it scrolls to the door. */
+@media (max-width: 760px) {
+  .door-grid.has-open .door[aria-expanded="false"] { opacity: 1; }
+  .door .go-arrow { transform: rotate(90deg); }
+  .door[aria-expanded="true"] .go-arrow { transform: rotate(-90deg); }
+  .door-panel.open { transition: none; }
+  .door.nudge .go-arrow { animation: door-nudge 0.9s ease-in-out 2; }
+}
+@keyframes door-nudge {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 5px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .door.nudge .go-arrow { animation: none; }
+}

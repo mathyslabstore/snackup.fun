@@ -2,7 +2,7 @@
    The panels stay in the page (closed = collapsed + inert), so they are still indexed,
    and #snack / #seances / #local open the matching door on arrival. Opening a door
    also writes its anchor in the address bar and scrolls it into view; its tiles fade
-   in one after the other on a wide screen, and as they scroll into view on a phone. */
+   in one after the other, in reading order. */
 (function () {
   var doors = Array.prototype.slice.call(document.querySelectorAll('.door'));
   if (!doors.length) return;
@@ -25,21 +25,24 @@
       if (!e.isIntersecting) return;
       show(e.target);
       seen.unobserve(e.target);
+      // phone: once a door is in, its arrow nudges to say "this opens"
+      if (!wide.matches && e.target.classList.contains('door')) {
+        setTimeout(function () { e.target.classList.add('nudge'); }, 700);
+      }
     });
   }, { rootMargin: '0px 0px -8% 0px' });
 
+  // a panel's tiles, one after the other in reading order: quick on a wide screen where
+  // they all land in view at once, 0.5 s apart on a phone where they stack down the page
   function reveal(panel) {
-    var tiles = Array.prototype.slice.call(panel.querySelectorAll('.tile, .privacy-note'));
     if (still.matches || !seen) return;
+    var tiles = Array.prototype.slice.call(panel.querySelectorAll('.tile, .privacy-note'));
+    var step = wide.matches ? 90 : 500;
     tiles.forEach(function (t) { t.classList.remove('in'); t.style.transitionDelay = ''; t.classList.add('reveal'); });
-    if (wide.matches) {
-      // next frame, so the browser paints the hidden state before fading in
-      requestAnimationFrame(function () {
-        tiles.forEach(function (t, i) { t.style.transitionDelay = (120 + i * 90) + 'ms'; show(t); });
-      });
-    } else {
-      tiles.forEach(function (t) { seen.observe(t); });
-    }
+    // next frame, so the browser paints the hidden state before fading in
+    requestAnimationFrame(function () {
+      tiles.forEach(function (t, i) { t.style.transitionDelay = (120 + i * step) + 'ms'; show(t); });
+    });
   }
 
   function set(door, open) {

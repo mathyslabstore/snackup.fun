@@ -116,37 +116,6 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
         </div>
       </section>
 
-      <section class="bento-section" id="snack" aria-label="C&#39;est quoi un exercise snack">
-        <div class="local-grid">
-          <div class="tile lav tile-hero">
-            <span class="kicker">Expliqué</span>
-            <h2>C&#39;est quoi un «&nbsp;exercise snack&nbsp;»&nbsp;?</h2>
-            <p style="margin-top:14px">De courtes bouffées de mouvement, réparties dans ta journée. De 30 secondes à quelques minutes. Pas de salle, pas besoin de te changer.</p>
-            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
-            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile mint">
-            <span class="kicker">Où</span>
-            <h3>L&#39;escalier. Une chaise. Un mur. Le plan de travail.</h3>
-            <p>Ce qui est à portée de main suffit.</p>
-          </div>
-          <div class="tile sky tile-wide">
-            <span class="kicker">Ce que dit la recherche · 1</span>
-            <h3>Ton corps fait le total.</h3>
-            <p>Ce qui fait progresser, c&#39;est le volume total de la semaine&nbsp;: découpé en séances courtes, il donne des <strong>gains similaires</strong> à quelques longues. Et chaque série démarre sur un corps reposé.</p>
-            <p class="src">Schoenfeld &amp; Grgic&nbsp;: méta-analyses sur la fréquence d&#39;entraînement à volume égalisé</p>
-            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile peach">
-            <span class="kicker">Ce que dit la recherche · 2</span>
-            <p class="big">3 à 8&nbsp;%</p>
-            <h3>de muscle perdu par décennie, dès 30 ans.</h3>
-            <p>Le travail de force freine ce déclin. Quelques séries aujourd&#39;hui, c&#39;est un cadeau pour toi plus tard.</p>
-            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
-          </div>
-        </div>
-      </section>
-
       <section class="screens" aria-label="Captures de l'app">
         <div class="screens-head">
           <h2>Dans l'app</h2>
@@ -241,13 +210,58 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
         </ol>
       </section>
 
-      <section class="bento-section" id="seances" aria-label="Une séance de salle, en séries">
+      <section class="doors" aria-labelledby="doors-title">
+        <h2 id="doors-title">SnackUp en 3 chiffres</h2>
+        <div class="door-grid">
+          <button class="door tile lav" type="button" aria-expanded="false" aria-controls="snack" data-open="Voir le détail" data-close="Fermer">
+            <span class="num">30&nbsp;s</span>
+            <span class="line">C&#39;est quoi un «&nbsp;exercise snack&nbsp;»&nbsp;?</span>
+            <span class="go"><span class="go-label">Voir le détail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="snack" inert>
+            <div>
+        <div class="local-grid">
+          <div class="tile lav tile-hero">
+            <span class="kicker">Expliqué</span>
+            <h2>C&#39;est quoi un «&nbsp;exercise snack&nbsp;»&nbsp;?</h2>
+            <p style="margin-top:14px">De courtes bouffées de mouvement, réparties dans ta journée. De 30 secondes à quelques minutes. Pas de salle, pas besoin de te changer.</p>
+            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
+            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile mint">
+            <span class="kicker">Où</span>
+            <h3>L&#39;escalier. Une chaise. Un mur. Le plan de travail.</h3>
+            <p>Ce qui est à portée de main suffit.</p>
+          </div>
+          <div class="tile sky tile-wide">
+            <span class="kicker">Ce que dit la recherche · 1</span>
+            <h3>Ton corps fait le total.</h3>
+            <p>Ce qui fait progresser, c&#39;est le volume total de la semaine&nbsp;: découpé en séances courtes, il donne des <strong>gains similaires</strong> à quelques longues. Et chaque série démarre sur un corps reposé.</p>
+            <p class="src">Schoenfeld &amp; Grgic&nbsp;: méta-analyses sur la fréquence d&#39;entraînement à volume égalisé</p>
+            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile peach">
+            <span class="kicker">Ce que dit la recherche · 2</span>
+            <p class="big">3 à 8&nbsp;%</p>
+            <h3>de muscle perdu par décennie, dès 30 ans.</h3>
+            <p>Le travail de force freine ce déclin. Quelques séries aujourd&#39;hui, c&#39;est un cadeau pour toi plus tard.</p>
+            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
+          </div>
+        </div>
+            </div>
+          </div>
+          <button class="door tile mint" type="button" aria-expanded="false" aria-controls="seances" data-open="Voir le détail" data-close="Fermer">
+            <span class="num">22,5</span>
+            <span class="line">séries = une séance de salle. Ce que valent tes snacks.</span>
+            <span class="go"><span class="go-label">Voir le détail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="seances" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero tile-split">
             <div>
               <span class="kicker">La séance de référence</span>
               <h2 style="max-width:none">Une séance de salle, c&#39;est combien de séries&nbsp;?</h2>
-              <p class="big" style="margin-top:16px">22,5.</p>
               <p style="max-width:none">6 exercices × 3 séries, plus une part équitable de mobilité. Et un snack, c&#39;est une série.</p>
             </div>
             <div>
@@ -267,33 +281,15 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
             <p>C&#39;est une équivalence en séries, ni en durée ni en résultat. À 10 snacks par jour, ta semaine pèse environ 3 séances de salle, sans jamais bloquer une heure. La mobilité est comptée.</p>
           </div>
         </div>
-      </section>
-
-      <section class="faq">
-        <h2>Questions fréquentes</h2>
-        <details>
-          <summary>Quelques minutes d'exercice, ça sert vraiment à quelque chose&nbsp;?</summary>
-          <p>Pour progresser en force, ce qui compte surtout, c'est le volume accumulé sur la semaine et la régularité — bien plus que la durée d'une séance. SnackUp répartit ce volume en petits morceaux et veille à ce que chaque famille de mouvements (poussée, tirage, jambes, gainage, mobilité) ait sa part. Ce n'est pas un programme de compétition&nbsp;: c'est une façon réaliste de bouger régulièrement quand une séance d'une heure ne rentre pas dans la journée.</p>
-        </details>
-        <details>
-          <summary>Faut-il du matériel&nbsp;?</summary>
-          <p>Non. Une grande partie des exercices se fait au poids du corps, n'importe où. Si tu utilises un élastique, une barre de traction ou des haltères, l'app le remarque toute seule à partir des exercices que tu réussis&nbsp;: tu n'as jamais de liste à remplir.</p>
-        </details>
-        <details>
-          <summary>Je débute (ou je reprends), c'est pour moi&nbsp;?</summary>
-          <p>Oui. Tu règles un niveau de départ par type de mouvement, et chaque arbre de progression part du plus accessible — les pompes commencent au mur. Ton ressenti après chaque snack règle la suite, et un exercice trop dur n'abaisse jamais ton niveau réel.</p>
-        </details>
-        <details>
-          <summary>Où et quand faire ses snacks&nbsp;?</summary>
-          <p>Chez toi, au bureau, dehors&nbsp;: l'app propose des exercices adaptés à l'endroit où tu es et au temps dont tu disposes. Les rappels arrivent entre ton heure de réveil et ton heure de coucher, et apprennent des moments où tu dis vraiment oui.</p>
-        </details>
-        <details>
-          <summary>SnackUp est-il gratuit&nbsp;?</summary>
-          <p>Oui, sans compte et sans pub. Les propositions, la semaine complète, les rappels, l'historique et les sauvegardes chiffrées sont gratuits. Un abonnement premium facultatif ajoute du confort et du détail.</p>
-        </details>
-      </section>
-
-      <section class="local" id="local" aria-label="100 % local">
+            </div>
+          </div>
+          <button class="door tile sky" type="button" aria-expanded="false" aria-controls="local" data-open="Voir le détail" data-close="Fermer">
+            <span class="num">0</span>
+            <span class="line">serveur. Tes données restent sur ton téléphone.</span>
+            <span class="go"><span class="go-label">Voir le détail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="local" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero">
             <span class="kicker">Tes données</span>
@@ -332,6 +328,33 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
           </div>
         </div>
         <p class="privacy-note">Gratuit, sans mur&nbsp;: le moteur, la semaine complète, les rappels, l'historique et les sauvegardes chiffrées le restent. Un abonnement premium facultatif ajoute du confort et finance la suite. Le détail est dans les <a href="nutzungsbedingungen.html">conditions d'utilisation</a> et la <a href="datenschutz.html">politique de confidentialité</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Questions fréquentes</h2>
+        <details>
+          <summary>Quelques minutes d'exercice, ça sert vraiment à quelque chose&nbsp;?</summary>
+          <p>Pour progresser en force, ce qui compte surtout, c'est le volume accumulé sur la semaine et la régularité — bien plus que la durée d'une séance. SnackUp répartit ce volume en petits morceaux et veille à ce que chaque famille de mouvements (poussée, tirage, jambes, gainage, mobilité) ait sa part. Ce n'est pas un programme de compétition&nbsp;: c'est une façon réaliste de bouger régulièrement quand une séance d'une heure ne rentre pas dans la journée.</p>
+        </details>
+        <details>
+          <summary>Faut-il du matériel&nbsp;?</summary>
+          <p>Non. Une grande partie des exercices se fait au poids du corps, n'importe où. Si tu utilises un élastique, une barre de traction ou des haltères, l'app le remarque toute seule à partir des exercices que tu réussis&nbsp;: tu n'as jamais de liste à remplir.</p>
+        </details>
+        <details>
+          <summary>Je débute (ou je reprends), c'est pour moi&nbsp;?</summary>
+          <p>Oui. Tu règles un niveau de départ par type de mouvement, et chaque arbre de progression part du plus accessible — les pompes commencent au mur. Ton ressenti après chaque snack règle la suite, et un exercice trop dur n'abaisse jamais ton niveau réel.</p>
+        </details>
+        <details>
+          <summary>Où et quand faire ses snacks&nbsp;?</summary>
+          <p>Chez toi, au bureau, dehors&nbsp;: l'app propose des exercices adaptés à l'endroit où tu es et au temps dont tu disposes. Les rappels arrivent entre ton heure de réveil et ton heure de coucher, et apprennent des moments où tu dis vraiment oui.</p>
+        </details>
+        <details>
+          <summary>SnackUp est-il gratuit&nbsp;?</summary>
+          <p>Oui, sans compte et sans pub. Les propositions, la semaine complète, les rappels, l'historique et les sauvegardes chiffrées sont gratuits. Un abonnement premium facultatif ajoute du confort et du détail.</p>
+        </details>
       </section>
     </main>
 
@@ -483,6 +506,7 @@ try{if(!localStorage.getItem('snackup-lang')&&!/bot|crawl|spider|slurp|lighthous
     });
   })();
   </script>
+  <script src="doors.js" defer></script>
   <script src="theme.js" defer></script>
 </body>
 </html>

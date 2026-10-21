@@ -114,37 +114,6 @@
         </div>
       </section>
 
-      <section class="bento-section" id="snack" aria-label="Was ist ein Exercise Snack">
-        <div class="local-grid">
-          <div class="tile lav tile-hero">
-            <span class="kicker">Erklärt</span>
-            <h2>Was ist ein „Exercise Snack“?</h2>
-            <p style="margin-top:14px">Kurze Bewegungsphasen, über den Tag verteilt. 30 Sekunden bis wenige Minuten. Kein Studio, kein Umziehen.</p>
-            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
-            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile mint">
-            <span class="kicker">Wo</span>
-            <h3>Die Treppe. Ein Stuhl. Eine Wand. Die Küchenarbeitsplatte.</h3>
-            <p>Was in Reichweite ist, reicht.</p>
-          </div>
-          <div class="tile sky tile-wide">
-            <span class="kicker">Was die Forschung sagt · 1</span>
-            <h3>Dein Körper zählt alles zusammen.</h3>
-            <p>Entscheidend für den Fortschritt ist das Gesamtvolumen der Woche: In kurze Einheiten aufgeteilt, bringt es <strong>ähnliche Zuwächse</strong> wie wenige lange. Und jeder Satz beginnt mit einem ausgeruhten Körper.</p>
-            <p class="src">Schoenfeld &amp; Grgic: Meta-Analysen zur Trainingsfrequenz bei gleichem Volumen</p>
-            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile peach">
-            <span class="kicker">Was die Forschung sagt · 2</span>
-            <p class="big">3 bis 8&nbsp;%</p>
-            <h3>Muskelmasse weniger pro Jahrzehnt, ab 30.</h3>
-            <p>Krafttraining bremst diesen Abbau. Ein paar Sätze heute sind ein Geschenk an dein späteres Ich.</p>
-            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
-          </div>
-        </div>
-      </section>
-
       <section class="screens" aria-label="App-Screenshots">
         <div class="screens-head">
           <h2>In der App</h2>
@@ -239,13 +208,58 @@
         </ol>
       </section>
 
-      <section class="bento-section" id="seances" aria-label="Eine Studio-Einheit in Sätzen">
+      <section class="doors" aria-labelledby="doors-title">
+        <h2 id="doors-title">SnackUp in 3 Zahlen</h2>
+        <div class="door-grid">
+          <button class="door tile lav" type="button" aria-expanded="false" aria-controls="snack" data-open="Details ansehen" data-close="Schließen">
+            <span class="num">30&nbsp;s</span>
+            <span class="line">Was ist ein „Exercise Snack“?</span>
+            <span class="go"><span class="go-label">Details ansehen</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="snack" inert>
+            <div>
+        <div class="local-grid">
+          <div class="tile lav tile-hero">
+            <span class="kicker">Erklärt</span>
+            <h2>Was ist ein „Exercise Snack“?</h2>
+            <p style="margin-top:14px">Kurze Bewegungsphasen, über den Tag verteilt. 30 Sekunden bis wenige Minuten. Kein Studio, kein Umziehen.</p>
+            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
+            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile mint">
+            <span class="kicker">Wo</span>
+            <h3>Die Treppe. Ein Stuhl. Eine Wand. Die Küchenarbeitsplatte.</h3>
+            <p>Was in Reichweite ist, reicht.</p>
+          </div>
+          <div class="tile sky tile-wide">
+            <span class="kicker">Was die Forschung sagt · 1</span>
+            <h3>Dein Körper zählt alles zusammen.</h3>
+            <p>Entscheidend für den Fortschritt ist das Gesamtvolumen der Woche: In kurze Einheiten aufgeteilt, bringt es <strong>ähnliche Zuwächse</strong> wie wenige lange. Und jeder Satz beginnt mit einem ausgeruhten Körper.</p>
+            <p class="src">Schoenfeld &amp; Grgic: Meta-Analysen zur Trainingsfrequenz bei gleichem Volumen</p>
+            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile peach">
+            <span class="kicker">Was die Forschung sagt · 2</span>
+            <p class="big">3 bis 8&nbsp;%</p>
+            <h3>Muskelmasse weniger pro Jahrzehnt, ab 30.</h3>
+            <p>Krafttraining bremst diesen Abbau. Ein paar Sätze heute sind ein Geschenk an dein späteres Ich.</p>
+            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
+          </div>
+        </div>
+            </div>
+          </div>
+          <button class="door tile mint" type="button" aria-expanded="false" aria-controls="seances" data-open="Details ansehen" data-close="Schließen">
+            <span class="num">22,5</span>
+            <span class="line">Sätze = eine Studio-Einheit. Was deine Snacks ergeben.</span>
+            <span class="go"><span class="go-label">Details ansehen</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="seances" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero tile-split">
             <div>
               <span class="kicker">Die Referenz-Einheit</span>
               <h2 style="max-width:none">Wie viele Sätze hat eine Studio-Einheit?</h2>
-              <p class="big" style="margin-top:16px">22,5.</p>
               <p style="max-width:none">6 Übungen × 3 Sätze, plus ein fairer Anteil Mobilität. Und ein Snack ist ein Satz.</p>
             </div>
             <div>
@@ -265,33 +279,15 @@
             <p>Es ist eine Gleichwertigkeit in Sätzen, nicht in Zeit oder Ergebnis. Bei 10 Snacks am Tag wiegt deine Woche etwa 3 Studio-Einheiten, ohne je eine Stunde freizuschaufeln. Mobilität zählt mit.</p>
           </div>
         </div>
-      </section>
-
-      <section class="faq">
-        <h2>Häufige Fragen</h2>
-        <details>
-          <summary>Bringen ein paar Minuten Training wirklich etwas?</summary>
-          <p>Um kräftiger zu werden, zählt vor allem das Volumen, das sich über die Woche ansammelt, und die Regelmäßigkeit — viel mehr als die Länge einer einzelnen Einheit. SnackUp teilt dieses Volumen in kleine Stücke auf und achtet darauf, dass jede Bewegungsfamilie (Drücken, Ziehen, Beine, Rumpf, Mobilität) ihren Anteil bekommt. Kein Wettkampfprogramm, sondern ein realistischer Weg, regelmäßig in Bewegung zu bleiben, wenn eine Stunde Training nicht in den Tag passt.</p>
-        </details>
-        <details>
-          <summary>Brauche ich Ausrüstung?</summary>
-          <p>Nein. Viele Übungen gehen mit dem eigenen Körpergewicht, überall. Nutzt du ein Widerstandsband, eine Klimmzugstange oder Kurzhanteln, merkt die App das von selbst an den Übungen, die du schaffst: Du musst nie eine Liste ausfüllen.</p>
-        </details>
-        <details>
-          <summary>Ich fange gerade an (oder wieder an). Ist das etwas für mich?</summary>
-          <p>Ja. Du stellst für jede Bewegungsart ein Startniveau ein, und jeder Fortschrittsbaum beginnt bei der zugänglichsten Übung — Liegestütze fangen an der Wand an. Wie sich ein Snack angefühlt hat, bestimmt den nächsten, und eine zu schwere Übung senkt nie dein echtes Niveau.</p>
-        </details>
-        <details>
-          <summary>Wo und wann mache ich meine Snacks?</summary>
-          <p>Zu Hause, im Büro, draußen: Die App schlägt Übungen vor, die zu deinem Ort und deiner verfügbaren Zeit passen. Erinnerungen kommen zwischen Aufstehen und Schlafengehen und lernen aus den Momenten, in denen du wirklich Ja sagst.</p>
-        </details>
-        <details>
-          <summary>Ist SnackUp kostenlos?</summary>
-          <p>Ja, ohne Konto und ohne Werbung. Vorschläge, die ganze Woche, Erinnerungen, Verlauf und verschlüsselte Backups sind kostenlos. Ein optionales Premium-Abo bringt mehr Komfort und Details.</p>
-        </details>
-      </section>
-
-      <section class="local" id="local" aria-label="100 % lokal">
+            </div>
+          </div>
+          <button class="door tile sky" type="button" aria-expanded="false" aria-controls="local" data-open="Details ansehen" data-close="Schließen">
+            <span class="num">0</span>
+            <span class="line">Server. Deine Daten bleiben auf deinem Handy.</span>
+            <span class="go"><span class="go-label">Details ansehen</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="local" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero">
             <span class="kicker">Deine Daten</span>
@@ -330,6 +326,33 @@
           </div>
         </div>
         <p class="privacy-note">Kostenlos, ohne Mauer: Der Motor, die komplette Woche, die Erinnerungen, der Verlauf und die verschlüsselten Sicherungen bleiben es. Ein optionales Premium-Abo bringt Komfort und finanziert das Weitere. Die Einzelheiten stehen in den <a href="nutzungsbedingungen-de.html">Nutzungsbedingungen</a> und der <a href="datenschutz-de.html">Datenschutzerklärung</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Häufige Fragen</h2>
+        <details>
+          <summary>Bringen ein paar Minuten Training wirklich etwas?</summary>
+          <p>Um kräftiger zu werden, zählt vor allem das Volumen, das sich über die Woche ansammelt, und die Regelmäßigkeit — viel mehr als die Länge einer einzelnen Einheit. SnackUp teilt dieses Volumen in kleine Stücke auf und achtet darauf, dass jede Bewegungsfamilie (Drücken, Ziehen, Beine, Rumpf, Mobilität) ihren Anteil bekommt. Kein Wettkampfprogramm, sondern ein realistischer Weg, regelmäßig in Bewegung zu bleiben, wenn eine Stunde Training nicht in den Tag passt.</p>
+        </details>
+        <details>
+          <summary>Brauche ich Ausrüstung?</summary>
+          <p>Nein. Viele Übungen gehen mit dem eigenen Körpergewicht, überall. Nutzt du ein Widerstandsband, eine Klimmzugstange oder Kurzhanteln, merkt die App das von selbst an den Übungen, die du schaffst: Du musst nie eine Liste ausfüllen.</p>
+        </details>
+        <details>
+          <summary>Ich fange gerade an (oder wieder an). Ist das etwas für mich?</summary>
+          <p>Ja. Du stellst für jede Bewegungsart ein Startniveau ein, und jeder Fortschrittsbaum beginnt bei der zugänglichsten Übung — Liegestütze fangen an der Wand an. Wie sich ein Snack angefühlt hat, bestimmt den nächsten, und eine zu schwere Übung senkt nie dein echtes Niveau.</p>
+        </details>
+        <details>
+          <summary>Wo und wann mache ich meine Snacks?</summary>
+          <p>Zu Hause, im Büro, draußen: Die App schlägt Übungen vor, die zu deinem Ort und deiner verfügbaren Zeit passen. Erinnerungen kommen zwischen Aufstehen und Schlafengehen und lernen aus den Momenten, in denen du wirklich Ja sagst.</p>
+        </details>
+        <details>
+          <summary>Ist SnackUp kostenlos?</summary>
+          <p>Ja, ohne Konto und ohne Werbung. Vorschläge, die ganze Woche, Erinnerungen, Verlauf und verschlüsselte Backups sind kostenlos. Ein optionales Premium-Abo bringt mehr Komfort und Details.</p>
+        </details>
       </section>
     </main>
 
@@ -481,6 +504,7 @@
     });
   })();
   </script>
+  <script src="doors.js" defer></script>
   <script src="theme.js" defer></script>
 </body>
 </html>

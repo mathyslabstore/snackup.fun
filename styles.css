@@ -956,3 +956,83 @@ button:focus-visible {
   .tile-hero.tile-split { padding-bottom: 36px; }
   .tile .big { font-size: 54px; }
 }
+
+/* ---- SnackUp in 3 numbers: door cards that unfold their bento panel ---- */
+
+.doors { padding: 72px 0 0; }
+.doors h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; margin: 0 0 24px; }
+
+.door-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 16px;
+}
+
+.door {
+  grid-row: 1;
+  border: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  min-height: 210px;
+  gap: 8px;
+  transition: transform 0.15s ease, opacity 0.2s ease;
+}
+.door:hover { transform: translateY(-2px); }
+.door-grid.has-open .door[aria-expanded="false"] { opacity: 0.55; }
+.door-grid.has-open .door[aria-expanded="false"]:hover { opacity: 0.85; }
+
+.door .num { font-size: 60px; font-weight: 800; line-height: 1; letter-spacing: -2.5px; }
+.door .line { font-size: 16px; font-weight: 700; line-height: 1.4; max-width: 260px; }
+.door .go {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  opacity: 0.85;
+}
+.door .go-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--surface);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+.door[aria-expanded="true"] .go-arrow { transform: rotate(90deg); }
+
+/* All panels share the row under the doors; only the open one has height.
+   Opening animates, closing is instant so two panels never overlap mid-swap. */
+.door-panel {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 0fr;
+}
+.door-panel > div { overflow: hidden; min-height: 0; }
+.door-panel.open {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.4s ease;
+}
+.door-panel.open > div { padding-top: 16px; }
+.door-panel .privacy-note { margin-bottom: 4px; }
+
+@media (max-width: 760px) {
+  .doors { padding-top: 56px; }
+  .doors h2 { font-size: 24px; }
+  .door-grid { grid-template-columns: 1fr; }
+  .door, .door-panel { grid-row: auto; }
+  .door { min-height: 0; margin-top: 12px; display: grid; grid-template-columns: auto 1fr; column-gap: 18px; align-items: center; }
+  .door .num { font-size: 44px; grid-row: span 2; min-width: 104px; }
+  .door .go { margin-top: 4px; }
+  .door-grid > .door:first-child { margin-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .door, .door .go-arrow, .door-panel.open { transition: none; }
+}

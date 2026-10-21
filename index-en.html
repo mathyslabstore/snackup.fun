@@ -110,37 +110,6 @@
         </div>
       </section>
 
-      <section class="bento-section" id="snack" aria-label="What is an exercise snack">
-        <div class="local-grid">
-          <div class="tile lav tile-hero">
-            <span class="kicker">Explained</span>
-            <h2>What is an exercise snack?</h2>
-            <p style="margin-top:14px">Short bouts of movement, scattered through your day. 30 seconds to a few minutes. No gym, no changing clothes.</p>
-            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
-            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile mint">
-            <span class="kicker">Where</span>
-            <h3>Stairs. A chair. A wall. A kitchen counter.</h3>
-            <p>Whatever is within reach is enough.</p>
-          </div>
-          <div class="tile sky tile-wide">
-            <span class="kicker">What the research says · 1</span>
-            <h3>Your body adds it all up.</h3>
-            <p>What drives progress is the week&#39;s total volume: split into short sessions, it produces <strong>similar gains</strong> to a few long ones. And every set starts on a fresh body.</p>
-            <p class="src">Schoenfeld &amp; Grgic: meta-analyses on training frequency at equated volume</p>
-            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
-          </div>
-          <div class="tile peach">
-            <span class="kicker">What the research says · 2</span>
-            <p class="big">3 to 8%</p>
-            <h3>of muscle lost per decade, from age 30.</h3>
-            <p>Strength work slows that decline. A few sets today is a gift to your future self.</p>
-            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
-          </div>
-        </div>
-      </section>
-
       <section class="screens" aria-label="App screenshots">
         <div class="screens-head">
           <h2>Inside the app</h2>
@@ -235,13 +204,58 @@
         </ol>
       </section>
 
-      <section class="bento-section" id="seances" aria-label="A gym session, in sets">
+      <section class="doors" aria-labelledby="doors-title">
+        <h2 id="doors-title">SnackUp in 3 numbers</h2>
+        <div class="door-grid">
+          <button class="door tile lav" type="button" aria-expanded="false" aria-controls="snack" data-open="See the detail" data-close="Close">
+            <span class="num">30&nbsp;s</span>
+            <span class="line">What is an exercise snack?</span>
+            <span class="go"><span class="go-label">See the detail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="snack" inert>
+            <div>
+        <div class="local-grid">
+          <div class="tile lav tile-hero">
+            <span class="kicker">Explained</span>
+            <h2>What is an exercise snack?</h2>
+            <p style="margin-top:14px">Short bouts of movement, scattered through your day. 30 seconds to a few minutes. No gym, no changing clothes.</p>
+            <div class="chips"><span>30 s</span><span>1 min</span><span>2 min</span></div>
+            <img class="tile-illu" src="illus/man-jogging.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile mint">
+            <span class="kicker">Where</span>
+            <h3>Stairs. A chair. A wall. A kitchen counter.</h3>
+            <p>Whatever is within reach is enough.</p>
+          </div>
+          <div class="tile sky tile-wide">
+            <span class="kicker">What the research says · 1</span>
+            <h3>Your body adds it all up.</h3>
+            <p>What drives progress is the week&#39;s total volume: split into short sessions, it produces <strong>similar gains</strong> to a few long ones. And every set starts on a fresh body.</p>
+            <p class="src">Schoenfeld &amp; Grgic: meta-analyses on training frequency at equated volume</p>
+            <img class="tile-illu" src="illus/woman-lifting.svg" alt="" loading="lazy">
+          </div>
+          <div class="tile peach">
+            <span class="kicker">What the research says · 2</span>
+            <p class="big">3 to 8%</p>
+            <h3>of muscle lost per decade, from age 30.</h3>
+            <p>Strength work slows that decline. A few sets today is a gift to your future self.</p>
+            <p class="src">Volpi et al., <em>Current Opinion in Clinical Nutrition and Metabolic Care</em>, 2004</p>
+          </div>
+        </div>
+            </div>
+          </div>
+          <button class="door tile mint" type="button" aria-expanded="false" aria-controls="seances" data-open="See the detail" data-close="Close">
+            <span class="num">22.5</span>
+            <span class="line">sets = one gym session. What your snacks add up to.</span>
+            <span class="go"><span class="go-label">See the detail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="seances" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero tile-split">
             <div>
               <span class="kicker">The reference session</span>
               <h2 style="max-width:none">How many sets is a gym session?</h2>
-              <p class="big" style="margin-top:16px">22.5.</p>
               <p style="max-width:none">6 exercises × 3 sets, plus a fair share of mobility. And one snack is one set.</p>
             </div>
             <div>
@@ -261,33 +275,15 @@
             <p>It&#39;s an equivalence in sets, not in time or in outcome. At 10 snacks a day, your week weighs about 3 gym sessions, without ever blocking out an hour. Mobility is part of the count.</p>
           </div>
         </div>
-      </section>
-
-      <section class="faq">
-        <h2>Frequently asked questions</h2>
-        <details>
-          <summary>Do a few minutes of exercise really make a difference?</summary>
-          <p>To get stronger, what matters most is the volume you accumulate over the week and how consistent you are — far more than how long a single session lasts. SnackUp splits that volume into small pieces and makes sure each movement family (push, pull, legs, core, mobility) gets its share. It's not a competition program: it's a realistic way to move regularly when an hour-long workout doesn't fit into your day.</p>
-        </details>
-        <details>
-          <summary>Do I need any equipment?</summary>
-          <p>No. Many of the exercises are bodyweight-only and can be done anywhere. If you use a resistance band, a pull-up bar or dumbbells, the app picks that up on its own from the exercises you complete: there's never a list to fill in.</p>
-        </details>
-        <details>
-          <summary>I'm a beginner (or getting back into it). Is it for me?</summary>
-          <p>Yes. You set a starting level for each type of movement, and every progression tree starts from the most accessible move — push-ups begin against a wall. How each snack felt shapes the next one, and an exercise that was too hard never lowers your real level.</p>
-        </details>
-        <details>
-          <summary>Where and when do I do my snacks?</summary>
-          <p>At home, at the office, outdoors: the app suggests exercises that fit where you are and the time you have. Reminders arrive between your wake-up and bedtime, and learn from the moments you actually say yes.</p>
-        </details>
-        <details>
-          <summary>Is SnackUp free?</summary>
-          <p>Yes, with no account and no ads. Suggestions, the full week, reminders, history and encrypted backups are free. An optional premium subscription adds comfort and detail.</p>
-        </details>
-      </section>
-
-      <section class="local" id="local" aria-label="100% local">
+            </div>
+          </div>
+          <button class="door tile sky" type="button" aria-expanded="false" aria-controls="local" data-open="See the detail" data-close="Close">
+            <span class="num">0</span>
+            <span class="line">servers. Your data stays on your phone.</span>
+            <span class="go"><span class="go-label">See the detail</span><span class="go-arrow" aria-hidden="true">→</span></span>
+          </button>
+          <div class="door-panel" id="local" inert>
+            <div>
         <div class="local-grid">
           <div class="tile mint tile-hero">
             <span class="kicker">Your data</span>
@@ -326,6 +322,33 @@
           </div>
         </div>
         <p class="privacy-note">Free, with no wall: the engine, the full week, the reminders, the history and the encrypted backups stay that way. An optional premium subscription adds comfort and funds what comes next. The details are in the <a href="nutzungsbedingungen-en.html">terms of use</a> and the <a href="datenschutz-en.html">privacy policy</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>Frequently asked questions</h2>
+        <details>
+          <summary>Do a few minutes of exercise really make a difference?</summary>
+          <p>To get stronger, what matters most is the volume you accumulate over the week and how consistent you are — far more than how long a single session lasts. SnackUp splits that volume into small pieces and makes sure each movement family (push, pull, legs, core, mobility) gets its share. It's not a competition program: it's a realistic way to move regularly when an hour-long workout doesn't fit into your day.</p>
+        </details>
+        <details>
+          <summary>Do I need any equipment?</summary>
+          <p>No. Many of the exercises are bodyweight-only and can be done anywhere. If you use a resistance band, a pull-up bar or dumbbells, the app picks that up on its own from the exercises you complete: there's never a list to fill in.</p>
+        </details>
+        <details>
+          <summary>I'm a beginner (or getting back into it). Is it for me?</summary>
+          <p>Yes. You set a starting level for each type of movement, and every progression tree starts from the most accessible move — push-ups begin against a wall. How each snack felt shapes the next one, and an exercise that was too hard never lowers your real level.</p>
+        </details>
+        <details>
+          <summary>Where and when do I do my snacks?</summary>
+          <p>At home, at the office, outdoors: the app suggests exercises that fit where you are and the time you have. Reminders arrive between your wake-up and bedtime, and learn from the moments you actually say yes.</p>
+        </details>
+        <details>
+          <summary>Is SnackUp free?</summary>
+          <p>Yes, with no account and no ads. Suggestions, the full week, reminders, history and encrypted backups are free. An optional premium subscription adds comfort and detail.</p>
+        </details>
       </section>
     </main>
 
@@ -477,6 +500,7 @@
     });
   })();
   </script>
+  <script src="doors.js" defer></script>
   <script src="theme.js" defer></script>
 </body>
 </html>

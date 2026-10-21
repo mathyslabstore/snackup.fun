@@ -1,7 +1,8 @@
-/* "SnackUp in 3 numbers": three door cards over one shared stage. Opening a door shows
-   its panel in the stage; switching doors never drops the stage back to 0, it eases
-   from one panel's height to the next while the new tiles fade in one by one, in
-   reading order. Panels stay in the page (hidden ones invisible + inert) so they are
+/* "SnackUp in 3 numbers": three door cards and one shared stage for their panels. On a
+   wide screen the stage sits under the row of doors and, when switching doors, eases
+   from one panel's height to the next instead of dropping back to 0; on a phone it
+   moves right under the tapped door, scroll compensated so that door never jumps.
+   Either way the new tiles fade in one by one, in reading order. Panels stay in the page (hidden ones invisible + inert) so they are
    still indexed; the door's anchor (#snack / #seances / #local) goes in the address
    bar, and opens the matching door on arrival. */
 (function () {
@@ -78,11 +79,34 @@
     });
   }
 
+  // where the stage lives: under the row of doors on a wide screen, right under the
+  // open door on a phone (the doors stack, so the panel belongs to the door it opens)
+  function place(door) {
+    if (wide.matches || !door) { if (stage.previousElementSibling !== grid) grid.parentNode.insertBefore(stage, grid.nextSibling); }
+    else if (stage.previousElementSibling !== door) grid.insertBefore(stage, door.nextSibling);
+  }
+
   function open(door) {
     var panel = panelOf(door);
-    var from = stage.offsetHeight;                 // measured before the panels swap
     doors.forEach(function (d) { setDoor(d, d === door); });
     grid.classList.add('has-open');
+
+    if (!wide.matches) {
+      // phone: the stage moves under this door at full height in one go; the scroll is
+      // compensated so the tapped door stays exactly where the finger left it
+      var before = door.getBoundingClientRect().top;
+      clearTimeout(easing);
+      stage.classList.remove('easing');
+      place(door);
+      showPanel(panel);
+      stage.style.height = 'auto';
+      window.scrollBy(0, door.getBoundingClientRect().top - before);
+      reveal(panel);
+      return;
+    }
+
+    var from = stage.offsetHeight;                 // measured before the panels swap
+    place(door);
     showPanel(panel);
     if (from === 0) {
       // straight to full height: the space is there before anything fades in
@@ -105,9 +129,9 @@
     try { history.replaceState(null, '', id ? '#' + id : location.pathname + location.search); } catch (e) {}
   }
 
-  function bring(smooth) {
-    // wide: the row of doors stays in sight above the stage; phone: straight to the stage
-    (wide.matches ? grid : stage).scrollIntoView({ block: 'start', behavior: smooth && !still.matches ? 'smooth' : 'auto' });
+  function bring(door, smooth) {
+    // wide: the row of doors stays in sight above the stage; phone: the door, its panel under it
+    (wide.matches ? grid : door).scrollIntoView({ block: 'start', behavior: smooth && !still.matches ? 'smooth' : 'auto' });
   }
 
   doors.forEach(function (d) {
@@ -115,7 +139,7 @@
       if (d.getAttribute('aria-expanded') === 'true') { close(); anchor(null); return; }
       open(d);
       anchor(d.getAttribute('aria-controls'));
-      bring(true);
+      bring(d, true);
     });
   });
 
@@ -133,8 +157,15 @@
     var door = id && doors.filter(function (d) { return d.getAttribute('aria-controls') === id; })[0];
     if (!door) return;
     open(door);
-    bring(false);
+    bring(door, false);
   }
   fromHash();
   window.addEventListener('hashchange', fromHash);
+
+  // rotating a tablet across the breakpoint: put the stage back where that layout wants it
+  function replace() {
+    var openDoor = doors.filter(function (d) { return d.getAttribute('aria-expanded') === 'true'; })[0];
+    place(openDoor);
+  }
+  if (wide.addEventListener) wide.addEventListener('change', replace); else if (wide.addListener) wide.addListener(replace);
 })();

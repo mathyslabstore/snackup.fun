@@ -994,3 +994,38 @@ button:focus-visible {
   .door, .door .go-arrow, .door-stage.easing, .reveal { transition: none; }
   .door.nudge .go-arrow { animation: none; }
 }
+
+/* Phone: the stage sits inside the stack of doors, under the open one. */
+@media (max-width: 760px) {
+  .door-grid > .door-stage { grid-column: 1 / -1; margin-top: -12px; }
+  .door { scroll-margin-top: 16px; }
+}
+
+/* End of the presentation: a hairline with the brand dot, so the reader knows
+   the three numbers are done before the FAQ starts. */
+.doors-end {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 44px 0 0;
+}
+.doors-end::before,
+.doors-end::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.14;
+}
+.doors-end span {
+  width: 10px;
+  height: 10px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--seed), var(--seed-dark));
+  flex: none;
+}
+
+/* A wide tile without an illustration has no room to reserve for one on a phone. */
+@media (max-width: 760px) {
+  .tile-wide:not(:has(.tile-illu)) { padding-bottom: 28px; }
+}

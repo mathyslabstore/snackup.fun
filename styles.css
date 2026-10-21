@@ -1036,3 +1036,15 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .door, .door .go-arrow, .door-panel.open { transition: none; }
 }
+
+/* No Android tap flash, and keep the card's own corners when focused (the global
+   button:focus-visible rule would square them to 6px). */
+.door { -webkit-tap-highlight-color: transparent; }
+.door:focus { outline: none; }
+.door:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; border-radius: var(--radius); }
+.door-grid, .door { scroll-margin-top: 16px; }
+
+/* Fade-in, added by doors.js only (no script = everything visible). The class is
+   removed once shown, so hover and has-open keep their own quick transitions. */
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
+.reveal.in { opacity: 1; transform: none; }
